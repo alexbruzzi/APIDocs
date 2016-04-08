@@ -6,5 +6,5 @@ This Developers section is divided into following segments:
 
 - [Architecture and Concepts](Arconcepts.md)
 - [API Documentation](ApiDoc.md)
-- [API Swagger](/dist/index.html)
+- [API Swagger](http://api.octo.ai)
 - [Starter Kit](StarterKit.md)

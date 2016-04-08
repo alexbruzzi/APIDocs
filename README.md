@@ -21,42 +21,9 @@ This is a shorthand for
 
 ```bash
 
-mkdocs build --clean && cp -rv docs/dist/ site/dist
+mkdocs build --clean
 tar -cvf octoKBOffline.tar site/
 
 ```
 
-
-# Troubleshooting #
-
-## can't start server. ERROR - Error building page /dist/index.html ##
-
-Open `mkdocs.yml` and change the line that reads 
-
-**FROM**
-
-```yaml
-    - 'Swagger' : '/dist/index.html'
-```
-
-**TO**
-
-```yaml
-    - 'Swagger' : 'dist/index.html'
-```
-
-## Can't open http://127.0.0.1:8000/dist/index.html ##
-
-Open `mkdocs.yml` and change the line that reads 
-
-**FROM**
-
-```yaml
-    - 'Swagger' : 'dist/index.html'
-```
-
-**TO**
-
-```yaml
-    - 'Swagger' : '/dist/index.html'
-```
+It will create a `site/` and a tarball containing the static pages to be deployed.

@@ -10,9 +10,7 @@ pages:
     - 'iOS, GCM' : iOSGCMStarterKit.md
     - 'android, native' : androidGCMStarterKit.md
     - 'android, cordova' : cordovaOctoStarterKit.md
-  - API:
-    - 'Doc' : ApiDoc.md
-    - 'Swagger' : 'dist/index.html'
+  - 'API Doc' : ApiDoc.md
 markdown_extensions:
     - toc:
         permalink: True
@@ -20,6 +18,6 @@ markdown_extensions:
         baselevel: 1
         anchorlink: True
 theme: yeti
-extra_css:
-  - None
 use_directory_urls: False
+html_navlinks: False
+copyright: '&copy; 2016, <a href="http://www.octo.ai">Aurora Borealis</a><p />'

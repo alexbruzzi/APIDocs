@@ -1,0 +1,25 @@
+site_name: Octomatic Developers
+site_author: Aurora Borealis Inc
+site_description: All the knowledge that is needed to integrate with Octomatic Enterprise API
+pages:
+  - Home: index.md
+  - Architecture: Arconcepts.md
+  - Starter Kit:
+    - 'Starter Kit': StarterKit.md
+    - 'iOS, APNS': iOSAPNSStarterKit.md
+    - 'iOS, GCM' : iOSGCMStarterKit.md
+    - 'android, native' : androidGCMStarterKit.md
+    - 'android, cordova' : cordovaOctoStarterKit.md
+  - API:
+    - 'Doc' : ApiDoc.md
+    - 'Swagger' : 'dist/index.html'
+markdown_extensions:
+    - toc:
+        permalink: True
+        separator: "_"
+        baselevel: 1
+        anchorlink: True
+theme: yeti
+extra_css:
+  - None
+use_directory_urls: False

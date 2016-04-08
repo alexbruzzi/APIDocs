@@ -1,0 +1,456 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Octo Enterprise API",
+        "description": "Integrate with Octo Enterprise using our RESTful APIs.",
+        "version": "1.0.0"
+    },
+    "host": "127.0.0.1:8000",
+    "securityDefinitions": {
+        "apikey": {
+            "type": "apiKey",
+            "name": "apikey",
+            "in": "header"
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/events/app.init/": {
+            "post": {
+                "summary": "Post an app init event.",
+                "description": "Event fired when app is initiated. Everytime app comes to foreground, this event should be fired with all possible values.",
+                "tags": [
+                    "events"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "description": "User ID",
+                        "schema": {
+                            "$ref": "#/definitions/Message"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "apikey": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the UUID for the event.",
+                        "schema": {
+                            "$ref": "#/definitions/BeaconResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/events/app.login/": {
+            "post": {
+                "summary": "Post an app login event.",
+                "description": "Event fired when user logins to the app",
+                "tags": [
+                    "events"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "description": "User ID",
+                        "schema": {
+                            "$ref": "#/definitions/Message"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "apikey": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the UUID for the event",
+                        "schema": {
+                            "$ref": "#/definitions/BeaconResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/events/app.logout/": {
+            "post": {
+                "summary": "Post an app logout event.",
+                "description": "Event fired when user logs out of the app.",
+                "tags": [
+                    "events"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "description": "User ID",
+                        "schema": {
+                            "$ref": "#/definitions/Message"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "apikey": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the UUID for the event",
+                        "schema": {
+                            "$ref": "#/definitions/BeaconResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/events/page.view/": {
+            "post": {
+                "summary": "Post a page view event.",
+                "description": "Event fired when a page view happened. You should fire this event on every page change in the viewport",
+                "tags": [
+                    "events"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "description": "Page View Message",
+                        "schema": {
+                            "$ref": "#/definitions/PageViewMessage"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "apikey": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the UUID for the event",
+                        "schema": {
+                            "$ref": "#/definitions/BeaconResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/events/productpage.view/": {
+            "post": {
+                "summary": "Post a product page view event.",
+                "description": "Event fired when a product page view happened. You should fire this event on every page change in the viewport for products. Products are anything that the consumer consumes. It could cost them money or time. This cost is the value of 'price' parameter.",
+                "tags": [
+                    "events"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "description": "User ID",
+                        "schema": {
+                            "$ref": "#/definitions/ProductPageViewMessage"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "apikey": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the UUID for the event",
+                        "schema": {
+                            "$ref": "#/definitions/BeaconResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/update_push_token/": {
+            "post": {
+                "summary": "Update push token for a user device.",
+                "description": "Use this to update the tokens necessary for push notifications. This is exposed as a set of 3 attributes - notification type, push token and push key. Notification type should be 0 for iOS notification and 1 for android. Push token could be the GCM registration token or the APNS registration token for the app device. Push key is your app's GCM key or APN key. Userid is optional. If userid is not speficied, the gcm token is stored without a userid. If a userid gets updated for a gcm token in future, another call needs to be made mentioning the userid.",
+                "tags": [
+                    "push_notification"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "description": "JSON object containing data",
+                        "schema": {
+                            "$ref": "#/definitions/UpdatePushToken"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "apikey": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "UUID of the event. You can use this UUID to trace an event.",
+                        "schema": {
+                            "$ref": "#/definitions/BeaconResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "BeaconResponse": {
+            "description": "Beacon response model",
+            "type": "object",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "format": "UUID",
+                    "description": "The UUID of the event. Use this to trace the event",
+                    "example": "57ff6653-c136-4ddf-8dba-15c7bd4995d2"
+                }
+            }
+        },
+        "Error": {
+            "description": "Error model",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 43
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Unable to process message"
+                }
+            }
+        },
+        "PhoneDetails": {
+            "description": "Model for phone details of the user",
+            "type": "object",
+            "properties": {
+                "deviceId": {
+                    "type": "string",
+                    "example": "FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9"
+                },
+                "manufacturer": {
+                    "type": "string",
+                    "example": "Apple"
+                },
+                "model": {
+                    "type": "string",
+                    "example": "iPhone 6"
+                },
+                "latitude": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 28.6139
+                },
+                "longitude": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 77.209
+                }
+            }
+        },
+        "Message": {
+            "type": "object",
+            "description": "Base message model. Every message must belong to this model",
+            "properties": {
+                "userId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique User Id of the logged in user. Any unique tracking ID for logged out user.",
+                    "example": 2736482
+                },
+                "phoneDetails": {
+                    "$ref": "#/definitions/PhoneDetails"
+                }
+            },
+            "required": [
+                "userId",
+                "phoneDetails"
+            ]
+        },
+        "PageViewMessage": {
+            "type": "object",
+            "description": "Model for page view message",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Message"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "routeUrl": {
+                            "type": "string",
+                            "description": "Human readable unique routing Url for the page",
+                            "example": "/Home/DealsOfTheDay/34"
+                        },
+                        "categories": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "description": "Text representation of the categories this page belongs to"
+                            },
+                            "example": [
+                                "shopping",
+                                "handbags",
+                                "rajasthani"
+                            ]
+                        },
+                        "tags": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "description": "Text representation of the tags of the page"
+                            },
+                            "example": [
+                                "handbags",
+                                "aldo",
+                                "yellow"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "routeUrl"
+                    ]
+                }
+            ]
+        },
+        "ProductPageViewMessage": {
+            "type": "object",
+            "description": "Model for product page view",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/PageViewMessage"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "productId": {
+                            "type": "integer",
+                            "format": "int32",
+                            "description": "Unique Product ID of the product being viewed",
+                            "example": 63726
+                        },
+                        "productName": {
+                            "type": "string",
+                            "description": "Human understandable name of the product",
+                            "example": "Smartphone Series S01"
+                        },
+                        "price": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "Price of the product",
+                            "example": 99.99
+                        }
+                    },
+                    "required": [
+                        "productId",
+                        "productName",
+                        "price"
+                    ]
+                }
+            ]
+        },
+        "UpdatePushToken": {
+            "type": "object",
+            "description": "Model for update push token message",
+            "properties": {
+                "userId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique User Id of the user.",
+                    "example": 1146783
+                },
+                "pushToken": {
+                    "type": "string",
+                    "description": "Push Token for the user-device. This could be either the GCM Token or the APN Token",
+                    "example": "aKhsy762hHGSA90001S"
+                },
+                "pushKey": {
+                    "type": "string",
+                    "description": "Your app's push notification key. This could be either your app's GCM key or your app's APN key.",
+                    "example": "aksjs:posiuujslaqhwns826262XYZ"
+                },
+                "notificationType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0,
+                    "description": "Set this to 1 for Android and 0 for iOS"
+                },
+                "phoneDetails": {
+                    "$ref": "#/definitions/PhoneDetails"
+                }
+            },
+            "required": [
+                "pushToken",
+                "notificationType",
+                "phoneDetails"
+            ]
+        }
+    }
+}

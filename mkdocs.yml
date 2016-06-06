@@ -1,5 +1,5 @@
 site_name: Octomatic Developers
-site_author: Aurora Borealis Inc
+site_author: Aurora Borealis Pvt. Ltd.
 site_description: All the knowledge that is needed to integrate with Octomatic Enterprise API
 pages:
   - Home: index.md
@@ -21,3 +21,4 @@ theme: yeti
 use_directory_urls: False
 html_navlinks: False
 copyright: '&copy; 2016, <a href="http://www.octo.ai">Aurora Borealis</a><p />'
+google_analytics: ['UA-76541897-2', 'developers.octo.ai']

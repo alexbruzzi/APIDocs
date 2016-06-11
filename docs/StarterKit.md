@@ -7,7 +7,9 @@ Octomatic Enterprise onboarding includes a starter kit for following platforms:
 	- Swift
 - Android
 	-	Native
-	- 	Cordova
+	- Cordova
+- Desktop
+  - Web
 
 We support two major push notification services
 
@@ -18,7 +20,7 @@ The starter kit contains code for all the valid permutations of above.
 
 Depending on the platform you have for your app and for the push notifications click on one of the following:
 
-- [iOS, APNS (Objective C/ Swift)](iOSAPNSStarterKit.md)
+- [iOS, APNS (Objective C / Swift)](iOSAPNSStarterKit.md)
 - [iOS, GCM (Objective C / Swift)](iOSGCMStarterKit.md)
 - [Android, GCM, Native](androidGCMStarterKit.md)
 - [Android, GCM, Cordova](cordovaOctoStarterKit.md)
@@ -49,6 +51,3 @@ To begin with your app should be enabled for following user permissions:
   - Manufacturer
   - Device Unique ID
 - Able to connect to internet
-
-
-

@@ -60,7 +60,7 @@ Event fired when app is initiated. Everytime app comes to foreground, this event
 
 * events
 
-#### curl
+#### curl (Mobile Device)
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
@@ -71,6 +71,20 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/ht
     "model": "iPhone 6",
     "latitude": 28.6139,
     "longitude": 77.209
+  }
+}' 'http://api.octomatic.in/events/app.init/'
+```
+
+#### curl (Desktop Web)
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  "userId": 2736482,
+  "browserDetails": {
+    "name": "chrome",
+    "manufacturer": "Google",
+    "platform": "Linux",
+    "cookieid": "abc123"
   }
 }' 'http://api.octomatic.in/events/app.init/'
 ```
@@ -102,7 +116,7 @@ Event fired when user logins to the app
 
 * events
 
-#### curl
+#### curl (Mobile Device)
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
@@ -113,6 +127,20 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/ht
     "model": "iPhone 6",
     "latitude": 28.6139,
     "longitude": 77.209
+  }
+}' 'http://api.octomatic.in/events/app.login/'
+```
+
+#### curl (Desktop Web)
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  "userId": 2736482,
+  "browserDetails": {
+    "name": "chrome",
+    "manufacturer": "Google",
+    "platform": "Linux",
+    "cookieid": "abc123"
   }
 }' 'http://api.octomatic.in/events/app.login/'
 ```
@@ -143,7 +171,7 @@ Event fired when user logs out of the app.
 
 * events
 
-#### curl
+#### curl (Mobile Device)
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
@@ -154,6 +182,20 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/ht
     "model": "iPhone 6",
     "latitude": 28.6139,
     "longitude": 77.209
+  }
+}' 'http://api.octomatic.in/events/app.logout/'
+```
+
+#### curl (Desktop Web)
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  "userId": 2736482,
+  "browserDetails": {
+    "name": "chrome",
+    "manufacturer": "Google",
+    "platform": "Linux",
+    "cookieid": "abc123"
   }
 }' 'http://api.octomatic.in/events/app.logout/'
 ```
@@ -192,7 +234,7 @@ Event fired when a page view happened. You should fire this event on every page 
 
 * events
 
-#### curl
+#### curl (Mobile Device)
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
@@ -203,6 +245,31 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/ht
     "model": "iPhone 6",
     "latitude": 28.6139,
     "longitude": 77.209
+  },
+  "routeUrl": "/Home/DealsOfTheDay/34",
+  "categories": [
+    "shopping",
+    "handbags",
+    "rajasthani"
+  ],
+  "tags": [
+    "handbags",
+    "aldo",
+    "yellow"
+  ]
+}' 'http://api.octomatic.in/events/page.view/'
+```
+
+#### curl (Desktop Web)
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  "userId": 2736482,
+  "browserDetails": {
+    "name": "chrome",
+    "manufacturer": "Google",
+    "platform": "Linux",
+    "cookieid": "abc123"
   },
   "routeUrl": "/Home/DealsOfTheDay/34",
   "categories": [
@@ -244,7 +311,7 @@ Event fired when a product page view happened. You should fire this event on eve
 
 * events
 
-#### curl
+#### curl (Mobile Device)
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
@@ -255,6 +322,34 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/ht
     "model": "iPhone 6",
     "latitude": 28.6139,
     "longitude": 77.209
+  },
+  "routeUrl": "/Home/DealsOfTheDay/34",
+  "categories": [
+    "shopping",
+    "handbags",
+    "rajasthani"
+  ],
+  "tags": [
+    "handbags",
+    "aldo",
+    "yellow"
+  ],
+  "productId": 63726,
+  "productName": "Smartphone Series S01",
+  "price": 99.99
+}' 'http://api.octomatic.in/events/productpage.view/'
+```
+
+#### curl (Desktop Web)
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  "userId": 2736482,
+  "browserDetails": {
+    "name": "chrome",
+    "manufacturer": "Google",
+    "platform": "Linux",
+    "cookieid": "abc123"
   },
   "routeUrl": "/Home/DealsOfTheDay/34",
   "categories": [
@@ -299,7 +394,7 @@ Use this to update the tokens necessary for push notifications. This is exposed 
 
 * push_notification
 
-#### curl
+#### curl (only Mobile Device)
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{

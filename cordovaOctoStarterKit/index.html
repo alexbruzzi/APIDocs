@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Aurora Borealis Pvt. Ltd.">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>android, cordova - Octomatic Developers</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76541897-2', 'developers.octo.ai');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../index.html">Octomatic Developers</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../index.html">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../Arconcepts/index.html">Architecture</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Starter Kit <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../StarterKit/index.html">Starter Kit</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSAPNSStarterKit/index.html">iOS, APNS</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSGCMStarterKit/index.html">iOS, GCM</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../androidGCMStarterKit/index.html">android, native</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="index.html">android, cordova</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../ApiDoc/index.html">API Doc</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../androidGCMStarterKit/index.html">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../ApiDoc/index.html">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#cordova_android_octo_starter_kit">Cordova Android, OCTO Starter Kit</a></li>
+        
+    
+        <li class="main "><a href="#get_started">Get Started</a></li>
+        
+            <li><a href="#github_clone">Github Clone</a></li>
+        
+            <li><a href="#setup_capabilities">Setup Capabilities</a></li>
+        
+            <li><a href="#how_to_use">How to use</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="cordova_android_octo_starter_kit"><a class="toclink" href="#cordova_android_octo_starter_kit">Cordova Android, OCTO Starter Kit</a><a class="headerlink" href="#cordova_android_octo_starter_kit" title="Permanent link">&para;</a></h1>
+<p>This kit covers an app published on Android platform and uses GCM for push notifications.</p>
+<h1 id="get_started"><a class="toclink" href="#get_started">Get Started</a><a class="headerlink" href="#get_started" title="Permanent link">&para;</a></h1>
+<h2 id="github_clone"><a class="toclink" href="#github_clone">Github Clone</a><a class="headerlink" href="#github_clone" title="Permanent link">&para;</a></h2>
+<p>The complete source code of this app is available at our Github. <a href="https://github.com/octoai/StarterKit-Android-Cordova">https://github.com/octoai/StarterKit-Android-Cordova</a>. You should clone this and keep it ready for reference.</p>
+<p>Alternatively you can also <a href="https://github.com/octoai/StarterKit-Android-Cordova/archive/master.zip">download</a> the starter kit from here. This starter kit contains a working sample of code that takes all permissions from users, and sends appropriate API calls at appropriate times.</p>
+<p>If you already have an app, chances are most of the steps would have been already done. However, it is advised to go through the document and remove any inconsistencies.</p>
+<p>The code snippets mentioned here can be found in the starter kit. Should you have any difficulty understaning the flow, the starter kit code should help you out.</p>
+<h2 id="setup_capabilities"><a class="toclink" href="#setup_capabilities">Setup Capabilities</a><a class="headerlink" href="#setup_capabilities" title="Permanent link">&para;</a></h2>
+<h3 id="geolocation_setup"><a class="toclink" href="#geolocation_setup">GeoLocation Setup</a><a class="headerlink" href="#geolocation_setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Add Cordova Plugin : <code>cordova-plugin-geolocation</code></li>
+</ul>
+<pre><code>    cordova plugin add cordova-plugin-geolocation
+
+</code></pre>
+
+<ul>
+<li>Get Geo location details using its predefined methods</li>
+</ul>
+<pre><code>
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+    }, function(error) {
+        // Unable to find location
+    });
+
+</code></pre>
+
+<h3 id="gcm_setup"><a class="toclink" href="#gcm_setup">GCM Setup</a><a class="headerlink" href="#gcm_setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create an application from <a href="https://console.developers.google.com">Google Developers Console</a>.</li>
+<li>Activate GCM API.</li>
+<li>Your Google App <strong>Project number</strong> is your <strong>SENDER_ID</strong>.</li>
+<li>Add Cordova Plugin : <code>phonegap-plugin-push</code><ul>
+<li>Replace SENDER_ID with your own</li>
+</ul>
+</li>
+</ul>
+<pre><code>    cordova plugin add phonegap-plugin-push --variable SENDER_ID=&quot;XXXXXXX&quot;
+
+</code></pre>
+
+<ul>
+<li>Get User GCM registration details to send or receive notifications in future</li>
+</ul>
+<pre><code>
+    var push = PushNotification.init({
+        &quot;android&quot;: {
+            &quot;senderID&quot;: &quot;123456789&quot; // Replace it with your own Google App Sender ID
+        }
+    });
+
+    push.on('registration', function(data) {
+       console.log(data.registrationId); // User GCM registration token
+    });
+
+    // On Receiving Notification
+    push.on('notification', function(data) {
+        console.log(&quot;GCM Debugging&quot;);
+        console.log(data);
+        console.log(data.message);
+        console.log(data.title);
+        console.log(data.count);
+        console.log(data.sound);
+        console.log(data.image);
+        console.log(data.additionalData);
+    });
+
+    push.on('error', function(e) {
+        // Handle Error 
+        // e.message
+    });
+
+</code></pre>
+
+<h3 id="get_phone_details_setup"><a class="toclink" href="#get_phone_details_setup">Get Phone Details Setup</a><a class="headerlink" href="#get_phone_details_setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Add Cordova Plugin : <code>cordova-plugin-device</code></li>
+</ul>
+<pre><code>    cordova plugin add cordova-plugin-device
+
+</code></pre>
+
+<ul>
+<li>Get Device details using global <strong>device</strong> variable defined by the plugin</li>
+</ul>
+<pre><code>
+    var deviceId = device.uuid;
+    var manufacturer = device.manufacturer;
+    var model = device.model;
+
+</code></pre>
+
+<h2 id="how_to_use"><a class="toclink" href="#how_to_use">How to use</a><a class="headerlink" href="#how_to_use" title="Permanent link">&para;</a></h2>
+<h4 id="phone_details_json"><a class="toclink" href="#phone_details_json">Phone Details Json</a><a class="headerlink" href="#phone_details_json" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create a <code>PhoneDetails</code> variable &amp; initialize Json variables<ul>
+<li>Fetch location details from GeoLocation API explained above.</li>
+<li>Fetch device details using cordova plugin as explained above.</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var phoneDetails = {
+        &quot;deviceId&quot;: device.uuid,
+        &quot;manufacturer&quot;: device.manufacturer,
+        &quot;model&quot;: device.model,
+        &quot;latitude&quot;: latitude,
+        &quot;longitude&quot;: longitude
+    }
+
+</code></pre>
+
+<hr />
+<h4 id="app_init_call"><a class="toclink" href="#app_init_call">App Init Call</a><a class="headerlink" href="#app_init_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Do an AJAX POST call to hit octo api when application starts<ul>
+<li>Replace <strong>phoneDetails</strong> with your Json type phone details variable</li>
+<li>Replace <strong>User ID</strong> with your own User's ID</li>
+<li>Replace <strong>url base address</strong> with <strong>Octo API Base Address</strong> shared with you</li>
+<li>Set <strong>API Key</strong> shared with you</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var data = JSON.stringify({
+        &quot;userId&quot;: 1234567, // Replace your User ID
+        &quot;phoneDetails&quot;: phoneDetails // Replace phone details variable
+    });
+
+    $.ajax({
+        url: 'http://api.octomatic.in/events/app.init/', // Replace Base Address
+        type : 'POST',
+        headers: { 
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            &quot;apikey&quot;: &quot;API_KEY&quot; // Replace your API Key
+        },
+        data: data
+    });
+
+</code></pre>
+
+<hr />
+<h4 id="app_login_call"><a class="toclink" href="#app_login_call">App Login Call</a><a class="headerlink" href="#app_login_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Do an AJAX POST call to hit octo api when user LoggedIn<ul>
+<li>Replace <strong>phoneDetails</strong> with your Json type phone details variable</li>
+<li>Replace <strong>User ID</strong> with your own User's ID</li>
+<li>Replace <strong>url base address</strong> with <strong>Octo API Base Address</strong> shared with you</li>
+<li>Set <strong>API Key</strong> shared with you</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var loginData = JSON.stringify({
+        &quot;userId&quot;: 1234567, // Replace your User ID
+        &quot;phoneDetails&quot;: phoneDetails // Replace phone details variable
+    });
+
+    $.ajax({
+        url: 'http://api.octomatic.in/events/app.login/', // Replace Base Address
+        type : 'POST',
+        headers: { 
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            &quot;apikey&quot;: &quot;API_KEY&quot; // Replace your API Key
+        },
+        data: loginData
+    });
+
+</code></pre>
+
+<hr />
+<h4 id="app_logout_call"><a class="toclink" href="#app_logout_call">App Logout Call</a><a class="headerlink" href="#app_logout_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Do an AJAX POST call to hit octo api when user LoggedOut<ul>
+<li>Replace <strong>phoneDetails</strong> with your Json type phone details variable</li>
+<li>Replace <strong>User ID</strong> with your own User's ID</li>
+<li>Replace <strong>url base address</strong> with <strong>Octo API Base Address</strong> shared with you</li>
+<li>Set <strong>API Key</strong> shared with you</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var logoutData = JSON.stringify({
+        &quot;userId&quot;: 1234567, // Replace your User ID
+        &quot;phoneDetails&quot;: phoneDetails // Replace phone details variable
+    });
+
+    $.ajax({
+        url: 'http://api.octomatic.in/events/app.logout/', // Replace Base Address
+        type : 'POST',
+        headers: { 
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            &quot;apikey&quot;: &quot;API_KEY&quot; // Replace your API Key
+        },
+        data: logoutData
+    });
+
+</code></pre>
+
+<hr />
+<h4 id="app_pageview_call"><a class="toclink" href="#app_pageview_call">App Pageview Call</a><a class="headerlink" href="#app_pageview_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Do an AJAX POST call to hit octo api when user request a page<ul>
+<li>Replace <strong>phoneDetails</strong> with your Json type phone details variable</li>
+<li>Replace <strong>User ID</strong> with your own User's ID</li>
+<li>Replace <strong>url base address</strong> with <strong>Octo API Base Address</strong> shared with you</li>
+<li>Set <strong>API Key</strong> shared with you</li>
+<li>Set <strong>Categories</strong>, <strong>tags</strong>, <strong>routeUrl</strong>* with Page Details </li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var pageview_data = JSON.stringify({
+        &quot;userId&quot;: 1234567, // Replace your User ID
+        &quot;phoneDetails&quot;: phoneDetails, // Replace phone details variable
+        &quot;routeUrl&quot;: &quot;/Home/DealsOfTheDay/34&quot;, // Replace it with your App Page URL
+        &quot;categories&quot;: [
+            &quot;shopping&quot;,
+            &quot;handbags&quot;
+        ], // Replace it with Page Categories
+        &quot;tags&quot;: [
+            &quot;handbags&quot;,
+            &quot;recommended&quot;
+        ] // Replace it with Page Tags
+    });
+
+    $.ajax({
+        url: 'http://api.octomatic.in/events/page.view/', // Replace Base Address
+        type : 'POST',
+        headers: { 
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            &quot;apikey&quot;: &quot;API_KEY&quot; // Replace your API Key
+        },
+        data: pageview_data
+    });
+
+</code></pre>
+
+<hr />
+<h4 id="app_product_pageview_call"><a class="toclink" href="#app_product_pageview_call">App Product Pageview Call</a><a class="headerlink" href="#app_product_pageview_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Do an AJAX POST call to hit octo api when user request a product page<ul>
+<li>Replace <strong>phoneDetails</strong> with your Json type phone details variable</li>
+<li>Replace <strong>User ID</strong> with your own User's ID</li>
+<li>Replace <strong>url base address</strong> with <strong>Octo API Base Address</strong> shared with you</li>
+<li>Set <strong>API Key</strong> shared with you</li>
+<li>Set <strong>Categories</strong>, <strong>tags</strong>, <strong>routeUrl</strong>* according to your Page Details </li>
+<li>Set <strong>ProductId</strong>, <strong>ProductName</strong>, <strong>Price</strong> according to your Product Deatils</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var productdata = JSON.stringify({
+        &quot;userId&quot;: 1234567, // Replace your User ID
+        &quot;phoneDetails&quot;: phoneDetails, // Replace phone details variable
+        &quot;routeUrl&quot;: &quot;/Home/DealsOfTheDay/34&quot;, // Replace it with your App Page URL
+        &quot;categories&quot;: [
+            &quot;shopping&quot;,
+            &quot;handbags&quot;
+        ], // Replace it with Page Categories
+        &quot;tags&quot;: [
+            &quot;handbags&quot;,
+            &quot;recommended&quot;
+        ], // Replace it with Page Tags
+        &quot;productId&quot;: 12345, // Set Product Id
+        &quot;productName&quot;: &quot;Smartphone Series S01&quot;, // Set Product Name
+        &quot;price&quot;: 99.99 // Set Product Price
+    });
+
+    $.ajax({
+        url: 'http://api.octomatic.in/events/productpage.view/', // Replace Base Address
+        type : 'POST',
+        headers: { 
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            &quot;apikey&quot;: &quot;API_KEY&quot; // Replace your API Key
+        },
+        data: productdata
+    });
+
+</code></pre>
+
+<hr />
+<h4 id="app_gcm_token_update_call"><a class="toclink" href="#app_gcm_token_update_call">App GCM Token Update Call</a><a class="headerlink" href="#app_gcm_token_update_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Do an AJAX POST call to hit octo api when user registered for GCM<ul>
+<li>Replace <strong>phoneDetails</strong> with your Json type phone details variable</li>
+<li>Replace <strong>User ID</strong> with your own User's ID</li>
+<li>Replace <strong>url base address</strong> with <strong>Octo API Base Address</strong> shared with you</li>
+<li>Set <strong>API Key</strong> shared with you</li>
+<li>Set <strong>pushToken</strong> with User's GCM registration Token</li>
+<li>Replace <strong>pushKey</strong> with your Google GCM Api Key</li>
+<li>Set <strong>notificationType</strong> 0 for ios, 1 for android</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+    var gcmdata = JSON.stringify({
+        &quot;userId&quot;: 1234567, // Replace your User ID
+        &quot;pushToken&quot;: &quot;##############&quot;, // Replace with your User's Google GCM Registration Token
+        &quot;pushKey&quot;: &quot;AbCdEfGhIjKl0123-4_56789mnop&quot;,  // Replace with your Google GCM Key
+        &quot;notificationType&quot;: 1, // 1 for android
+        &quot;phoneDetails&quot;: phoneDetails // Replace phoneDetails variable
+    });
+
+    $.ajax({
+        url: 'http://api.octomatic.in/update_push_token/', // Replace Base Path
+        type : 'POST',
+        headers: { 
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+            &quot;apikey&quot;: &quot;API_KEY&quot; // Replace OCTO API Key
+        },
+        data: gcmdata
+    });
+
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>&copy; 2016, <a href="http://www.octo.ai">Aurora Borealis</a><p /></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

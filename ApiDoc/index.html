@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Aurora Borealis Pvt. Ltd.">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>API Doc - Octomatic Developers</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76541897-2', 'developers.octo.ai');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../index.html">Octomatic Developers</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../index.html">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../Arconcepts/index.html">Architecture</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Starter Kit <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../StarterKit/index.html">Starter Kit</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSAPNSStarterKit/index.html">iOS, APNS</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSGCMStarterKit/index.html">iOS, GCM</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../androidGCMStarterKit/index.html">android, native</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../cordovaOctoStarterKit/index.html">android, cordova</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="index.html">API Doc</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../cordovaOctoStarterKit/index.html">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a rel="prev" >
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#octo_enterprise_api">Octo Enterprise API</a></li>
+        
+            <li><a href="#overview">Overview</a></li>
+        
+            <li><a href="#security">Security</a></li>
+        
+            <li><a href="#paths">Paths</a></li>
+        
+            <li><a href="#definitions">Definitions</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="octo_enterprise_api"><a class="toclink" href="#octo_enterprise_api">Octo Enterprise API</a><a class="headerlink" href="#octo_enterprise_api" title="Permanent link">&para;</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#octo_enterprise_api">Octo Enterprise API</a><ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#version_information">Version information</a></li>
+<li><a href="#uri_scheme">URI scheme</a></li>
+<li><a href="#consumes">Consumes</a></li>
+<li><a href="#produces">Produces</a></li>
+</ul>
+</li>
+<li><a href="#security">Security</a><ul>
+<li><a href="#apikey"><a name="apikey">apikey</a></a></li>
+</ul>
+</li>
+<li><a href="#paths">Paths</a><ul>
+<li><a href="#post_an_app_init_event">Post an app init event.</a><ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#responses">Responses</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#curl_mobile_device">curl (Mobile Device)</a></li>
+<li><a href="#curl_desktop_web">curl (Desktop Web)</a></li>
+</ul>
+</li>
+<li><a href="#post_an_app_login_event">Post an app login event.</a><ul>
+<li><a href="#description_1">Description</a></li>
+<li><a href="#parameters_1">Parameters</a></li>
+<li><a href="#responses_1">Responses</a></li>
+<li><a href="#tags_1">Tags</a></li>
+<li><a href="#curl_mobile_device_1">curl (Mobile Device)</a></li>
+<li><a href="#curl_desktop_web_1">curl (Desktop Web)</a></li>
+</ul>
+</li>
+<li><a href="#post_an_app_logout_event">Post an app logout event.</a><ul>
+<li><a href="#description_2">Description</a></li>
+<li><a href="#parameters_2">Parameters</a></li>
+<li><a href="#responses_2">Responses</a></li>
+<li><a href="#tags_2">Tags</a></li>
+<li><a href="#curl_mobile_device_2">curl (Mobile Device)</a></li>
+<li><a href="#curl_desktop_web_2">curl (Desktop Web)</a></li>
+</ul>
+</li>
+<li><a href="#post_a_page_view_event">Post a page view event.</a><ul>
+<li><a href="#description_3">Description</a></li>
+<li><a href="#parameters_3">Parameters</a></li>
+<li><a href="#responses_3">Responses</a></li>
+<li><a href="#consumes_1">Consumes</a></li>
+<li><a href="#produces_1">Produces</a></li>
+<li><a href="#tags_3">Tags</a></li>
+<li><a href="#curl_mobile_device_3">curl (Mobile Device)</a></li>
+<li><a href="#curl_desktop_web_3">curl (Desktop Web)</a></li>
+</ul>
+</li>
+<li><a href="#post_a_product_page_view_event">Post a product page view event.</a><ul>
+<li><a href="#description_4">Description</a></li>
+<li><a href="#parameters_4">Parameters</a></li>
+<li><a href="#responses_4">Responses</a></li>
+<li><a href="#tags_4">Tags</a></li>
+<li><a href="#curl_mobile_device_4">curl (Mobile Device)</a></li>
+<li><a href="#curl_desktop_web_4">curl (Desktop Web)</a></li>
+</ul>
+</li>
+<li><a href="#update_push_token_for_a_user_device">Update push token for a user device.</a><ul>
+<li><a href="#description_5">Description</a></li>
+<li><a href="#parameters_5">Parameters</a></li>
+<li><a href="#responses_5">Responses</a></li>
+<li><a href="#tags_5">Tags</a></li>
+<li><a href="#curl_only_mobile_device">curl (only Mobile Device)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#definitions">Definitions</a><ul>
+<li><a href="#beaconresponse"><a name="BeaconResponse">BeaconResponse</a></a></li>
+<li><a href="#error"><a name="Error">Error</a></a></li>
+<li><a href="#message"><a name="Message">Message</a></a></li>
+<li><a href="#pageviewmessage"><a name="PageViewMessage">PageViewMessage</a></a></li>
+<li><a href="#phonedetails"><a name="PhoneDetails">PhoneDetails</a></a></li>
+<li><a href="#productpageviewmessage"><a name="ProductPageViewMessage">ProductPageViewMessage</a></a></li>
+<li><a href="#updatepushtoken"><a name="UpdatePushToken">UpdatePushToken</a></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="overview"><a class="toclink" href="#overview">Overview</a><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Integrate with Octo Enterprise using our RESTful APIs.</p>
+<h3 id="version_information"><a class="toclink" href="#version_information">Version information</a><a class="headerlink" href="#version_information" title="Permanent link">&para;</a></h3>
+<p>Version: 1.0.0</p>
+<h3 id="uri_scheme"><a class="toclink" href="#uri_scheme">URI scheme</a><a class="headerlink" href="#uri_scheme" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Host: api.octomatic.in</li>
+<li>BasePath: /</li>
+<li>Schemes: HTTP</li>
+</ul>
+<h3 id="consumes"><a class="toclink" href="#consumes">Consumes</a><a class="headerlink" href="#consumes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>application/json</li>
+</ul>
+<h3 id="produces"><a class="toclink" href="#produces">Produces</a><a class="headerlink" href="#produces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>application/json</li>
+</ul>
+<h2 id="security"><a class="toclink" href="#security">Security</a><a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<h3 id="apikey"><a class="toclink" href="#apikey"><a name="apikey">apikey</a></a><a class="headerlink" href="#apikey" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apikey</td>
+<td>Your Octomatic Enterprise API Key</td>
+<td>HTTP Header</td>
+</tr>
+</tbody>
+</table>
+<h2 id="paths"><a class="toclink" href="#paths">Paths</a><a class="headerlink" href="#paths" title="Permanent link">&para;</a></h2>
+<h3 id="post_an_app_init_event"><a class="toclink" href="#post_an_app_init_event">Post an app init event.</a><a class="headerlink" href="#post_an_app_init_event" title="Permanent link">&para;</a></h3>
+<pre><code>POST /events/app.init/
+</code></pre>
+
+<h4 id="description"><a class="toclink" href="#description">Description</a><a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>Event fired when app is initiated. Everytime app comes to foreground, this event should be fired with all possible values.</p>
+<h4 id="parameters"><a class="toclink" href="#parameters">Parameters</a><a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BodyParameter</td>
+<td>body</td>
+<td>User ID</td>
+<td>true</td>
+<td><a href="#Message">Message</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses"><a class="toclink" href="#responses">Responses</a><a class="headerlink" href="#responses" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Returns the UUID for the event.</td>
+<td><a href="#BeaconResponse">BeaconResponse</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Unexpected Error</td>
+<td><a href="#Error">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags"><a class="toclink" href="#tags">Tags</a><a class="headerlink" href="#tags" title="Permanent link">&para;</a></h4>
+<ul>
+<li>events</li>
+</ul>
+<h4 id="curl_mobile_device"><a class="toclink" href="#curl_mobile_device">curl (Mobile Device)</a><a class="headerlink" href="#curl_mobile_device" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;phoneDetails&quot;: {
+    &quot;deviceId&quot;: &quot;FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9&quot;,
+    &quot;manufacturer&quot;: &quot;Apple&quot;,
+    &quot;model&quot;: &quot;iPhone 6&quot;,
+    &quot;latitude&quot;: 28.6139,
+    &quot;longitude&quot;: 77.209
+  }
+}' 'http://api.octomatic.in/events/app.init/'
+</code></pre>
+
+<h4 id="curl_desktop_web"><a class="toclink" href="#curl_desktop_web">curl (Desktop Web)</a><a class="headerlink" href="#curl_desktop_web" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;browserDetails&quot;: {
+    &quot;name&quot;: &quot;chrome&quot;,
+    &quot;manufacturer&quot;: &quot;Google&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;cookieid&quot;: &quot;abc123&quot;
+  }
+}' 'http://api.octomatic.in/events/app.init/'
+</code></pre>
+
+<h3 id="post_an_app_login_event"><a class="toclink" href="#post_an_app_login_event">Post an app login event.</a><a class="headerlink" href="#post_an_app_login_event" title="Permanent link">&para;</a></h3>
+<pre><code>POST /events/app.login/
+</code></pre>
+
+<h4 id="description_1"><a class="toclink" href="#description_1">Description</a><a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h4>
+<p>Event fired when user logins to the app</p>
+<h4 id="parameters_1"><a class="toclink" href="#parameters_1">Parameters</a><a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BodyParameter</td>
+<td>body</td>
+<td>User ID</td>
+<td>true</td>
+<td><a href="#Message">Message</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses_1"><a class="toclink" href="#responses_1">Responses</a><a class="headerlink" href="#responses_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Returns the UUID for the event</td>
+<td><a href="#BeaconResponse">BeaconResponse</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Unexpected Error</td>
+<td><a href="#Error">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags_1"><a class="toclink" href="#tags_1">Tags</a><a class="headerlink" href="#tags_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>events</li>
+</ul>
+<h4 id="curl_mobile_device_1"><a class="toclink" href="#curl_mobile_device_1">curl (Mobile Device)</a><a class="headerlink" href="#curl_mobile_device_1" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;phoneDetails&quot;: {
+    &quot;deviceId&quot;: &quot;FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9&quot;,
+    &quot;manufacturer&quot;: &quot;Apple&quot;,
+    &quot;model&quot;: &quot;iPhone 6&quot;,
+    &quot;latitude&quot;: 28.6139,
+    &quot;longitude&quot;: 77.209
+  }
+}' 'http://api.octomatic.in/events/app.login/'
+</code></pre>
+
+<h4 id="curl_desktop_web_1"><a class="toclink" href="#curl_desktop_web_1">curl (Desktop Web)</a><a class="headerlink" href="#curl_desktop_web_1" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;browserDetails&quot;: {
+    &quot;name&quot;: &quot;chrome&quot;,
+    &quot;manufacturer&quot;: &quot;Google&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;cookieid&quot;: &quot;abc123&quot;
+  }
+}' 'http://api.octomatic.in/events/app.login/'
+</code></pre>
+
+<h3 id="post_an_app_logout_event"><a class="toclink" href="#post_an_app_logout_event">Post an app logout event.</a><a class="headerlink" href="#post_an_app_logout_event" title="Permanent link">&para;</a></h3>
+<pre><code>POST /events/app.logout/
+</code></pre>
+
+<h4 id="description_2"><a class="toclink" href="#description_2">Description</a><a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h4>
+<p>Event fired when user logs out of the app.</p>
+<h4 id="parameters_2"><a class="toclink" href="#parameters_2">Parameters</a><a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BodyParameter</td>
+<td>body</td>
+<td>User ID</td>
+<td>true</td>
+<td><a href="#Message">Message</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses_2"><a class="toclink" href="#responses_2">Responses</a><a class="headerlink" href="#responses_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Returns the UUID for the event</td>
+<td><a href="#BeaconResponse">BeaconResponse</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Unexpected Error</td>
+<td><a href="#Error">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags_2"><a class="toclink" href="#tags_2">Tags</a><a class="headerlink" href="#tags_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>events</li>
+</ul>
+<h4 id="curl_mobile_device_2"><a class="toclink" href="#curl_mobile_device_2">curl (Mobile Device)</a><a class="headerlink" href="#curl_mobile_device_2" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;phoneDetails&quot;: {
+    &quot;deviceId&quot;: &quot;FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9&quot;,
+    &quot;manufacturer&quot;: &quot;Apple&quot;,
+    &quot;model&quot;: &quot;iPhone 6&quot;,
+    &quot;latitude&quot;: 28.6139,
+    &quot;longitude&quot;: 77.209
+  }
+}' 'http://api.octomatic.in/events/app.logout/'
+</code></pre>
+
+<h4 id="curl_desktop_web_2"><a class="toclink" href="#curl_desktop_web_2">curl (Desktop Web)</a><a class="headerlink" href="#curl_desktop_web_2" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;browserDetails&quot;: {
+    &quot;name&quot;: &quot;chrome&quot;,
+    &quot;manufacturer&quot;: &quot;Google&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;cookieid&quot;: &quot;abc123&quot;
+  }
+}' 'http://api.octomatic.in/events/app.logout/'
+</code></pre>
+
+<h3 id="post_a_page_view_event"><a class="toclink" href="#post_a_page_view_event">Post a page view event.</a><a class="headerlink" href="#post_a_page_view_event" title="Permanent link">&para;</a></h3>
+<pre><code>POST /events/page.view/
+</code></pre>
+
+<h4 id="description_3"><a class="toclink" href="#description_3">Description</a><a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h4>
+<p>Event fired when a page view happened. You should fire this event on every page change in the viewport</p>
+<h4 id="parameters_3"><a class="toclink" href="#parameters_3">Parameters</a><a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BodyParameter</td>
+<td>body</td>
+<td>Page View Message</td>
+<td>true</td>
+<td><a href="#PageViewMessage">PageViewMessage</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses_3"><a class="toclink" href="#responses_3">Responses</a><a class="headerlink" href="#responses_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Returns the UUID for the event</td>
+<td><a href="#BeaconResponse">BeaconResponse</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Unexpected Error</td>
+<td><a href="#Error">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="consumes_1"><a class="toclink" href="#consumes_1">Consumes</a><a class="headerlink" href="#consumes_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>application/json</li>
+</ul>
+<h4 id="produces_1"><a class="toclink" href="#produces_1">Produces</a><a class="headerlink" href="#produces_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>application/json</li>
+</ul>
+<h4 id="tags_3"><a class="toclink" href="#tags_3">Tags</a><a class="headerlink" href="#tags_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>events</li>
+</ul>
+<h4 id="curl_mobile_device_3"><a class="toclink" href="#curl_mobile_device_3">curl (Mobile Device)</a><a class="headerlink" href="#curl_mobile_device_3" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;phoneDetails&quot;: {
+    &quot;deviceId&quot;: &quot;FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9&quot;,
+    &quot;manufacturer&quot;: &quot;Apple&quot;,
+    &quot;model&quot;: &quot;iPhone 6&quot;,
+    &quot;latitude&quot;: 28.6139,
+    &quot;longitude&quot;: 77.209
+  },
+  &quot;routeUrl&quot;: &quot;/Home/DealsOfTheDay/34&quot;,
+  &quot;categories&quot;: [
+    &quot;shopping&quot;,
+    &quot;handbags&quot;,
+    &quot;rajasthani&quot;
+  ],
+  &quot;tags&quot;: [
+    &quot;handbags&quot;,
+    &quot;aldo&quot;,
+    &quot;yellow&quot;
+  ]
+}' 'http://api.octomatic.in/events/page.view/'
+</code></pre>
+
+<h4 id="curl_desktop_web_3"><a class="toclink" href="#curl_desktop_web_3">curl (Desktop Web)</a><a class="headerlink" href="#curl_desktop_web_3" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;browserDetails&quot;: {
+    &quot;name&quot;: &quot;chrome&quot;,
+    &quot;manufacturer&quot;: &quot;Google&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;cookieid&quot;: &quot;abc123&quot;
+  },
+  &quot;routeUrl&quot;: &quot;/Home/DealsOfTheDay/34&quot;,
+  &quot;categories&quot;: [
+    &quot;shopping&quot;,
+    &quot;handbags&quot;,
+    &quot;rajasthani&quot;
+  ],
+  &quot;tags&quot;: [
+    &quot;handbags&quot;,
+    &quot;aldo&quot;,
+    &quot;yellow&quot;
+  ]
+}' 'http://api.octomatic.in/events/page.view/'
+</code></pre>
+
+<h3 id="post_a_product_page_view_event"><a class="toclink" href="#post_a_product_page_view_event">Post a product page view event.</a><a class="headerlink" href="#post_a_product_page_view_event" title="Permanent link">&para;</a></h3>
+<pre><code>POST /events/productpage.view/
+</code></pre>
+
+<h4 id="description_4"><a class="toclink" href="#description_4">Description</a><a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h4>
+<p>Event fired when a product page view happened. You should fire this event on every page change in the viewport for products. Products are anything that the consumer consumes. It could cost them money or time. This cost is the value of 'price' parameter.</p>
+<h4 id="parameters_4"><a class="toclink" href="#parameters_4">Parameters</a><a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BodyParameter</td>
+<td>body</td>
+<td>User ID</td>
+<td>true</td>
+<td><a href="#ProductPageViewMessage">ProductPageViewMessage</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses_4"><a class="toclink" href="#responses_4">Responses</a><a class="headerlink" href="#responses_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Returns the UUID for the event</td>
+<td><a href="#BeaconResponse">BeaconResponse</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Unexpected Error</td>
+<td><a href="#Error">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags_4"><a class="toclink" href="#tags_4">Tags</a><a class="headerlink" href="#tags_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>events</li>
+</ul>
+<h4 id="curl_mobile_device_4"><a class="toclink" href="#curl_mobile_device_4">curl (Mobile Device)</a><a class="headerlink" href="#curl_mobile_device_4" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;phoneDetails&quot;: {
+    &quot;deviceId&quot;: &quot;FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9&quot;,
+    &quot;manufacturer&quot;: &quot;Apple&quot;,
+    &quot;model&quot;: &quot;iPhone 6&quot;,
+    &quot;latitude&quot;: 28.6139,
+    &quot;longitude&quot;: 77.209
+  },
+  &quot;routeUrl&quot;: &quot;/Home/DealsOfTheDay/34&quot;,
+  &quot;categories&quot;: [
+    &quot;shopping&quot;,
+    &quot;handbags&quot;,
+    &quot;rajasthani&quot;
+  ],
+  &quot;tags&quot;: [
+    &quot;handbags&quot;,
+    &quot;aldo&quot;,
+    &quot;yellow&quot;
+  ],
+  &quot;productId&quot;: 63726,
+  &quot;productName&quot;: &quot;Smartphone Series S01&quot;,
+  &quot;price&quot;: 99.99
+}' 'http://api.octomatic.in/events/productpage.view/'
+</code></pre>
+
+<h4 id="curl_desktop_web_4"><a class="toclink" href="#curl_desktop_web_4">curl (Desktop Web)</a><a class="headerlink" href="#curl_desktop_web_4" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 2736482,
+  &quot;browserDetails&quot;: {
+    &quot;name&quot;: &quot;chrome&quot;,
+    &quot;manufacturer&quot;: &quot;Google&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;cookieid&quot;: &quot;abc123&quot;
+  },
+  &quot;routeUrl&quot;: &quot;/Home/DealsOfTheDay/34&quot;,
+  &quot;categories&quot;: [
+    &quot;shopping&quot;,
+    &quot;handbags&quot;,
+    &quot;rajasthani&quot;
+  ],
+  &quot;tags&quot;: [
+    &quot;handbags&quot;,
+    &quot;aldo&quot;,
+    &quot;yellow&quot;
+  ],
+  &quot;productId&quot;: 63726,
+  &quot;productName&quot;: &quot;Smartphone Series S01&quot;,
+  &quot;price&quot;: 99.99
+}' 'http://api.octomatic.in/events/productpage.view/'
+</code></pre>
+
+<h3 id="update_push_token_for_a_user_device"><a class="toclink" href="#update_push_token_for_a_user_device">Update push token for a user device.</a><a class="headerlink" href="#update_push_token_for_a_user_device" title="Permanent link">&para;</a></h3>
+<pre><code>POST /update_push_token/
+</code></pre>
+
+<h4 id="description_5"><a class="toclink" href="#description_5">Description</a><a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h4>
+<p>Use this to update the tokens necessary for push notifications. This is exposed as a set of 3 attributes - notification type, push token and push key. Notification type should be 0 for iOS notification and 1 for android. Push token could be the GCM registration token or the APNS registration token for the app device. Push key is your app's GCM key or APN key. Userid is optional. If userid is not speficied, the gcm token is stored without a userid. If a userid gets updated for a gcm token in future, another call needs to be made mentioning the userid.</p>
+<h4 id="parameters_5"><a class="toclink" href="#parameters_5">Parameters</a><a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BodyParameter</td>
+<td>body</td>
+<td>JSON object containing data</td>
+<td>true</td>
+<td><a href="#UpdatePushToken">UpdatePushToken</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses_5"><a class="toclink" href="#responses_5">Responses</a><a class="headerlink" href="#responses_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>UUID of the event. You can use this UUID to trace an event.</td>
+<td><a href="#BeaconResponse">BeaconResponse</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Unexpected error</td>
+<td><a href="#Error">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags_5"><a class="toclink" href="#tags_5">Tags</a><a class="headerlink" href="#tags_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>push_notification</li>
+</ul>
+<h4 id="curl_only_mobile_device"><a class="toclink" href="#curl_only_mobile_device">curl (only Mobile Device)</a><a class="headerlink" href="#curl_only_mobile_device" title="Permanent link">&para;</a></h4>
+<pre><code class="bash">curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'apikey: API_KEY' -d '{
+  &quot;userId&quot;: 1146783,
+  &quot;pushToken&quot;: &quot;aKhsy762hHGSA90001S&quot;,
+  &quot;pushKey&quot;: &quot;aksjs:posiuujslaqhwns826262XYZ&quot;,
+  &quot;notificationType&quot;: 0,
+  &quot;phoneDetails&quot;: {
+    &quot;deviceId&quot;: &quot;FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9&quot;,
+    &quot;manufacturer&quot;: &quot;Apple&quot;,
+    &quot;model&quot;: &quot;iPhone 6&quot;,
+    &quot;latitude&quot;: 28.6139,
+    &quot;longitude&quot;: 77.209
+  }
+}' 'http://api.octomatic.in/update_push_token/'
+</code></pre>
+
+<h2 id="definitions"><a class="toclink" href="#definitions">Definitions</a><a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<h3 id="beaconresponse"><a class="toclink" href="#beaconresponse"><a name="BeaconResponse">BeaconResponse</a></a><a class="headerlink" href="#beaconresponse" title="Permanent link">&para;</a></h3>
+<p>Beacon response model</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventId</td>
+<td>The UUID of the event. Use this to trace the event</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="error"><a class="toclink" href="#error"><a name="Error">Error</a></a><a class="headerlink" href="#error" title="Permanent link">&para;</a></h3>
+<p>Error model</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Error code</td>
+<td>false</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>Error message</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="message"><a class="toclink" href="#message"><a name="Message">Message</a></a><a class="headerlink" href="#message" title="Permanent link">&para;</a></h3>
+<p>Base message model. Every message must belong to this model</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>Unique User Id of the logged in user. Any unique tracking ID for logged out user.</td>
+<td>true</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneDetails</td>
+<td>Phone Details of the user</td>
+<td>true</td>
+<td><a href="#PhoneDetails">PhoneDetails</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageviewmessage"><a class="toclink" href="#pageviewmessage"><a name="PageViewMessage">PageViewMessage</a></a><a class="headerlink" href="#pageviewmessage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>Unique User Id of the logged in user. Any unique tracking ID for logged out user.</td>
+<td>true</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneDetails</td>
+<td>Phone details of the user</td>
+<td>true</td>
+<td><a href="#PhoneDetails">PhoneDetails</a></td>
+<td></td>
+</tr>
+<tr>
+<td>routeUrl</td>
+<td>Human readable unique routing Url for the page</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>categories</td>
+<td>The categories this page belongs to</td>
+<td>false</td>
+<td>string array</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>The tags that can be associated with the page</td>
+<td>false</td>
+<td>string array</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="phonedetails"><a class="toclink" href="#phonedetails"><a name="PhoneDetails">PhoneDetails</a></a><a class="headerlink" href="#phonedetails" title="Permanent link">&para;</a></h3>
+<p>Model for phone details of the user</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceId</td>
+<td>Unique ID of the user's device</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>manufacturer</td>
+<td>Manufacturer of the user's device</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>model</td>
+<td>Device Model</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>Latitude of the user's device</td>
+<td>false</td>
+<td>number (float)</td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>Longitude of the user's device</td>
+<td>false</td>
+<td>number (float)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="productpageviewmessage"><a class="toclink" href="#productpageviewmessage"><a name="ProductPageViewMessage">ProductPageViewMessage</a></a><a class="headerlink" href="#productpageviewmessage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>Unique User Id of the logged in user. Any unique tracking ID for logged out user.</td>
+<td>true</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneDetails</td>
+<td>Phone details of the user</td>
+<td>true</td>
+<td><a href="#PhoneDetails">PhoneDetails</a></td>
+<td></td>
+</tr>
+<tr>
+<td>routeUrl</td>
+<td>Human readable unique routing Url for the page</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>categories</td>
+<td>Categories this product belongs to</td>
+<td>false</td>
+<td>string array</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags that can be associated with this product</td>
+<td>false</td>
+<td>string array</td>
+<td></td>
+</tr>
+<tr>
+<td>productId</td>
+<td>Unique Product ID of the product being viewed</td>
+<td>true</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>productName</td>
+<td>Human understandable name of the product</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>Price of the product</td>
+<td>true</td>
+<td>number (float)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updatepushtoken"><a class="toclink" href="#updatepushtoken"><a name="UpdatePushToken">UpdatePushToken</a></a><a class="headerlink" href="#updatepushtoken" title="Permanent link">&para;</a></h3>
+<p>Model for update push token message</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>Unique User Id of the user.</td>
+<td>false</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>pushToken</td>
+<td>Push Token for the user-device. This could be either the GCM Token or the APN Token</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>pushKey</td>
+<td>Your app's push notification key. This could be either your app's GCM key or your app's APN key.</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>notificationType</td>
+<td>Set this to 1 for Android GCM and 0 for iOS</td>
+<td>true</td>
+<td>integer (int32)</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneDetails</td>
+<td>Phone details of user</td>
+<td>true</td>
+<td><a href="#PhoneDetails">PhoneDetails</a></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>&copy; 2016, <a href="http://www.octo.ai">Aurora Borealis</a><p /></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

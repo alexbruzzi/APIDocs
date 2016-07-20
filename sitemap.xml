@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Arconcepts/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/StarterKit/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/iOSAPNSStarterKit/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/iOSGCMStarterKit/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/androidGCMStarterKit/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/cordovaOctoStarterKit/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/ApiDoc/index.html</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

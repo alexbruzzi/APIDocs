@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Aurora Borealis Pvt. Ltd.">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>android, native - Octomatic Developers</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76541897-2', 'developers.octo.ai');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../index.html">Octomatic Developers</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../index.html">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../Arconcepts/index.html">Architecture</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Starter Kit <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../StarterKit/index.html">Starter Kit</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSAPNSStarterKit/index.html">iOS, APNS</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSGCMStarterKit/index.html">iOS, GCM</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="index.html">android, native</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../cordovaOctoStarterKit/index.html">android, cordova</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../ApiDoc/index.html">API Doc</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../iOSGCMStarterKit/index.html">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../cordovaOctoStarterKit/index.html">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#android_octo_starter_kit">Android, OCTO Starter Kit</a></li>
+        
+    
+        <li class="main "><a href="#get_started">Get Started</a></li>
+        
+            <li><a href="#github_clone">Github Clone</a></li>
+        
+            <li><a href="#setup_capabilities">Setup Capabilities</a></li>
+        
+            <li><a href="#how_to_use">How to use</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="android_octo_starter_kit"><a class="toclink" href="#android_octo_starter_kit">Android, OCTO Starter Kit</a><a class="headerlink" href="#android_octo_starter_kit" title="Permanent link">&para;</a></h1>
+<p>This kit covers an app published on Android platform and uses GCM for push notifications.</p>
+<div class="toc">
+<ul>
+<li><a href="#android_octo_starter_kit">Android, OCTO Starter Kit</a></li>
+<li><a href="#get_started">Get Started</a><ul>
+<li><a href="#github_clone">Github Clone</a><ul>
+<li><a href="#libraries">Libraries</a></li>
+</ul>
+</li>
+<li><a href="#setup_capabilities">Setup Capabilities</a><ul>
+<li><a href="#geolocation">GeoLocation</a></li>
+<li><a href="#gcm_activation">GCM Activation</a></li>
+<li><a href="#gcm_setup">GCM Setup</a></li>
+<li><a href="#phone_details">Phone Details</a></li>
+<li><a href="#octo_libraries">Octo Libraries</a></li>
+</ul>
+</li>
+<li><a href="#how_to_use">How to use</a><ul>
+<li><a href="#app_init_call">App Init Call</a></li>
+<li><a href="#user_login_call">User Login Call</a></li>
+<li><a href="#user_logout_call">User Logout Call</a></li>
+<li><a href="#user_pageview_call">User Pageview Call</a></li>
+<li><a href="#user_product_pageview_call">User Product Pageview Call</a></li>
+<li><a href="#user_gcm_token_update_call">User GCM Token Update Call</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="get_started"><a class="toclink" href="#get_started">Get Started</a><a class="headerlink" href="#get_started" title="Permanent link">&para;</a></h1>
+<h2 id="github_clone"><a class="toclink" href="#github_clone">Github Clone</a><a class="headerlink" href="#github_clone" title="Permanent link">&para;</a></h2>
+<p>The complete source code of this app is available at our Github. <a href="https://github.com/octoai/StarterKit-Android-Native">https://github.com/octoai/StarterKit-Android-Native</a>. You should clone this and keep it ready for reference.</p>
+<p>You can also <a href="https://github.com/octoai/StarterKit-Android-Native/archive/master.zip">download</a> the starter kit from here. This starter kit contains a working sample of code that takes all permissions from users, and sends appropriate API calls at appropriate times.</p>
+<p>If you already have an app, chances are most of the steps would have been already done. However, it is advised to go through the document and remove any inconsistencies.</p>
+<p>The code snippets mentioned here can be found in the starter kit. Should you have any difficulty understaning the flow, the starter kit code should help you out.</p>
+<h3 id="libraries"><a class="toclink" href="#libraries">Libraries</a><a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h3>
+<p>Should you want to download the native library, here is the link:</p>
+<ul>
+<li><a href="https://github.com/octoai/StarterKit-Android-Native/blob/master/app/libs/swagger-android-client-1.0.0.jar">Android Native Libraries</a></li>
+</ul>
+<h2 id="setup_capabilities"><a class="toclink" href="#setup_capabilities">Setup Capabilities</a><a class="headerlink" href="#setup_capabilities" title="Permanent link">&para;</a></h2>
+<h3 id="geolocation"><a class="toclink" href="#geolocation">GeoLocation</a><a class="headerlink" href="#geolocation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open AndroidManifest.xml and add <code>ACCESS_FINE_LOCATION</code> (Which includes both <code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_COARSE_LOCATION</code>).</li>
+<li>If you are getting network-based location then you need to add <code>INTERNET</code> permission too.</li>
+<li>Copy the <code>GPSTracker.java</code> class file from android starter kit and place it in along with other class files. This file having all the code setup for fetching user location.</li>
+<li>Create an object of GPSTracker class <code>GPSTracker object = new GPSTracker(this);</code> and start using gps services like<ul>
+<li>Check GPS services <code>object.canGetLocation()</code></li>
+<li>Fetch Latitude <code>object.getLatitude()</code></li>
+<li>Fetch Longitude <code>object.getLongitude()</code></li>
+<li>Show GPS Settings Alert Box <code>object.showSettingsAlert()</code></li>
+<li>Stop using GPS services <code>object.stopUsingGPS()</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="gcm_activation"><a class="toclink" href="#gcm_activation">GCM Activation</a><a class="headerlink" href="#gcm_activation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create an application from <a href="https://console.developers.google.com">Google Developers Console</a>.</li>
+<li>Activate GCM API.</li>
+<li>Then, generate a new server key.</li>
+<li>Generate Json file for downstream messages in android application. <a href="https://developers.google.com/mobile/add?platform=android&amp;cntapi=gcm&amp;cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fandroid%2Fclient&amp;cntlbl=Continue%20Adding%20GCM%20Support&amp;%3Fconfigured%3Dtrue">Generate</a>.</li>
+<li>Place the Json file in '<strong>app/</strong>' directory of your android application.</li>
+</ul>
+<h3 id="gcm_setup"><a class="toclink" href="#gcm_setup">GCM Setup</a><a class="headerlink" href="#gcm_setup" title="Permanent link">&para;</a></h3>
+<p>Follow the link to get started with <a href="https://developers.google.com/cloud-messaging/android/client">Google Android GCM Client</a>.</p>
+<hr />
+<h3 id="phone_details"><a class="toclink" href="#phone_details">Phone Details</a><a class="headerlink" href="#phone_details" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Import <code>import android.os.Build;</code> to fetch device details as follows<ul>
+<li><code>Build.MANUFACTURER</code> to find device manufacturer</li>
+<li><code>Build.ID</code> to find device id</li>
+<li><code>Build.MODEL</code> to find device model</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="octo_libraries"><a class="toclink" href="#octo_libraries">Octo Libraries</a><a class="headerlink" href="#octo_libraries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Import all files from '<strong>libs</strong>' folder from starter kit. List of files :<ul>
+<li>commons-codec-1.6.jar</li>
+<li>commons-logging-1.1.3.jar</li>
+<li>gson-2.3.1.jar</li>
+<li>junit-4.8.1.jar</li>
+<li>swagger-android-client-1.0.0.jar</li>
+<li>swagger-annotations-1.5.4.jar</li>
+</ul>
+</li>
+<li>Setup dependencies in module app gradle</li>
+</ul>
+<pre><code>
+ext {
+    swagger_annotations_version = &quot;1.5.0&quot;
+    httpclient_version = &quot;4.3.3&quot;
+}
+dependencies {
+    // Default Dependencies
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    // Dependencies
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support:support-annotations:23.2.0'
+    compile &quot;org.apache.httpcomponents:httpcore:$httpclient_version&quot;
+    compile &quot;org.apache.httpcomponents:httpclient:$httpclient_version&quot;
+    compile (&quot;org.apache.httpcomponents:httpcore:$httpclient_version&quot;) {
+        exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
+    }
+    compile (&quot;org.apache.httpcomponents:httpmime:$httpclient_version&quot;) {
+        exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
+    }
+}
+
+</code></pre>
+
+<h2 id="how_to_use"><a class="toclink" href="#how_to_use">How to use</a><a class="headerlink" href="#how_to_use" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Import swagger apis and models using statements</li>
+</ul>
+<pre><code>
+import io.swagger.client.api.*;
+import io.swagger.client.model.*;
+
+
+</code></pre>
+
+<ul>
+<li>Create a <code>PhoneDetails</code> class object &amp; initialize its variables using predefined library methods (fetch location details from GPSTracker)</li>
+</ul>
+<pre><code>
+PhoneDetails phoneDetails = new PhoneDetails();
+phoneDetails.setDeviceId(Build.ID);
+phoneDetails.setLatitude(latitude);
+phoneDetails.setLongitude(longitude);
+phoneDetails.setManufacturer(Build.MANUFACTURER);
+phoneDetails.setModel(Build.MODEL);
+
+</code></pre>
+
+<hr />
+<h4 id="app_init_call"><a class="toclink" href="#app_init_call">App Init Call</a><a class="headerlink" href="#app_init_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create an Async Task for Application Initilization Beacon Call</li>
+</ul>
+<pre><code>
+class AppinitCall extends AsyncTask&lt;String, Void, String&gt; {
+
+    private Exception exception;
+
+    protected String doInBackground(String... urls) {
+        try {
+            EventsApi eventsApi = new EventsApi();
+            eventsApi.addHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;Accept&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;apikey&quot;, &quot;API_KEY&quot;); // Set your own Api Key
+
+            eventsApi.setBasePath(&quot;http://api.octomatic.in&quot;); // Set Base Path
+
+            try {
+                Message message = new Message();
+                message.setUserId(1234567); // Set your own User ID
+                message.setPhoneDetails(phoneDetails); // Phone Details Object
+
+                BeaconResponse response = eventsApi.eventsAppInitPost(message);
+                return response.getEventId().toString();
+            } catch (Exception e) {
+                return e.toString();
+            }
+        } catch (Exception e) {
+            this.exception = e;
+            return null;
+        }
+    }
+
+    protected void onPostExecute(String response) {
+        Log.d(&quot;EventId&quot;,response);
+    }
+}
+
+</code></pre>
+
+<pre><code>- Set `Api Key`, `Base Path URL` shared with you.
+- Replace `User Id` with your own Users Id
+- Replace phoneDeatils with your own '**PhoneDetails**' Class object created above.
+</code></pre>
+<ul>
+<li>Make Beacon Call when app is initilialized every time user starts application.</li>
+</ul>
+<pre><code>
+AppinitCall appinit = new AppinitCall();
+String[] param = new String[]{};
+appinit.execute(param);
+
+</code></pre>
+
+<h4 id="user_login_call"><a class="toclink" href="#user_login_call">User Login Call</a><a class="headerlink" href="#user_login_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create an Async Task for User Login Beacon Call</li>
+</ul>
+<pre><code>
+class ApploginCall extends AsyncTask&lt;String, Void, String&gt; {
+
+    private Exception exception;
+
+    protected String doInBackground(String... urls) {
+        try {
+            EventsApi eventsApi = new EventsApi();
+            eventsApi.addHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;Accept&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;apikey&quot;, &quot;API_KEY&quot;); // Set your own Api Key
+
+            eventsApi.setBasePath(&quot;http://api.octomatic.in&quot;); // Set Base Path
+            try {
+                Message message = new Message();
+                message.setUserId(1234567); // Set Your own User Id
+                message.setPhoneDetails(phoneDetails); // Phone Details Object
+
+                BeaconResponse response = eventsApi.eventsAppLoginPost(message);
+                return response.getEventId().toString();
+            } catch (Exception e) {
+                return e.toString();
+            }
+        } catch (Exception e) {
+            this.exception = e;
+            return null;
+        }
+    }
+
+    protected void onPostExecute(String response) {
+        Log.d(&quot;EventId&quot;,response);
+    }
+}
+
+</code></pre>
+
+<pre><code>- Set `Api Key`, `Base Path URL` shared with you.
+- Replace `User Id` with your own Users Id
+- Replace phoneDeatils with your own PhoneDetails Class object created above.
+</code></pre>
+<ul>
+<li>Make Beacon Call when user logged in.</li>
+</ul>
+<pre><code>
+ApploginCall applogin = new ApploginCall();
+String[] param = new String[]{};
+applogin.execute(param);
+
+</code></pre>
+
+<h4 id="user_logout_call"><a class="toclink" href="#user_logout_call">User Logout Call</a><a class="headerlink" href="#user_logout_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create an Async Task for User Logout Beacon Call</li>
+</ul>
+<pre><code>
+class ApplogoutCall extends AsyncTask&lt;String, Void, String&gt; {
+    private Exception exception;
+
+    protected String doInBackground(String... urls) {
+        try {
+            EventsApi eventsApi = new EventsApi();
+            eventsApi.addHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;Accept&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;apikey&quot;, &quot;API_KEY&quot;); // Set your own Api Key
+
+            eventsApi.setBasePath(&quot;http://api.octomatic.in&quot;); // Set Base Path
+            try {
+                Message message = new Message();
+                message.setUserId(1234567); // Set Your own User Id
+                message.setPhoneDetails(phoneDetails); // Phone Details Object
+                BeaconResponse response = eventsApi.eventsAppLogoutPost(message);
+                return response.getEventId().toString();
+            } catch (Exception e) {
+                return e.toString();
+            }
+        } catch (Exception e) {
+            this.exception = e;
+            return null;
+        }
+    }
+
+    protected void onPostExecute(String response) {
+        Log.d(&quot;EventId&quot;,response);
+    }
+}
+
+</code></pre>
+
+<pre><code>- Set `Api Key`, `Base Path URL` shared with you.
+- Replace `User Id` with your own Users Id
+- Replace phoneDeatils with your own PhoneDetails Class object created above.
+</code></pre>
+<ul>
+<li>Make Beacon Call when user logged out.</li>
+</ul>
+<pre><code>
+ApplogoutCall applogout = new ApplogoutCall();
+String[] param = new String[]{};
+applogout.execute(param);
+
+</code></pre>
+
+<h4 id="user_pageview_call"><a class="toclink" href="#user_pageview_call">User Pageview Call</a><a class="headerlink" href="#user_pageview_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create an Async Task for User Pageview Beacon Call</li>
+</ul>
+<pre><code>
+class AppPageViewCall extends AsyncTask&lt;String, Void, String&gt; {
+    private Exception exception;
+
+    protected String doInBackground(String... urls) {
+        try {
+            EventsApi eventsApi = new EventsApi();
+            eventsApi.addHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;Accept&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;apikey&quot;, &quot;API_KEY&quot;); // Set your own Api Key
+
+            eventsApi.setBasePath(&quot;http://api.octomatic.in&quot;); // Set Base Path
+            try {
+                PageViewMessage message = new PageViewMessage();
+                message.setUserId(1234567); // Set Your own User Id
+                message.setPhoneDetails(phoneDetails); // Phone Details Object
+
+                message.setRouteUrl(&quot;/Home/DealsOfTheDay/34&quot;); // Page URL
+
+                List&lt;String&gt; cat = new ArrayList&lt;String&gt;();
+                cat.add(&quot;handbags&quot;); // Multiple Page Category
+                cat.add(&quot;indian&quot;); // Multiple Page Category
+
+                message.setCategories(cat);
+
+                List&lt;String&gt; tags = new ArrayList&lt;String&gt;();
+                tags.add(&quot;handbags&quot;); // Multiple Page Tags
+                tags.add(&quot;indian&quot;); // Multiple Page Tags
+                message.setTags(tags);
+
+                BeaconResponse response = eventsApi.eventsPageViewPost(message);
+                return response.getEventId().toString();
+            } catch (Exception e) {
+                return e.toString();
+            }
+        } catch (Exception e) {
+            this.exception = e;
+            return null;
+        }
+    }
+
+    protected void onPostExecute(String response) {
+        Log.d(&quot;EventId&quot;,response);
+        responseText.setText(response);
+    }
+}
+
+</code></pre>
+
+<pre><code>- Set `Api Key`, `Base Path URL` shared with you.
+- Replace `User Id` with your own Users Id
+- Replace `Page Url`, `categories`, `tags` with the page details
+- Replace phoneDeatils with your own PhoneDetails Class object created above.
+</code></pre>
+<ul>
+<li>Make Beacon Call when user logged out.</li>
+</ul>
+<pre><code>
+AppPageViewCall pageviewCall = new AppPageViewCall();
+String[] param = new String[]{};
+pageviewCall.execute(param);
+
+</code></pre>
+
+<h4 id="user_product_pageview_call"><a class="toclink" href="#user_product_pageview_call">User Product Pageview Call</a><a class="headerlink" href="#user_product_pageview_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create an Async Task for User Product Pageview Beacon Call</li>
+</ul>
+<pre><code>
+class AppProductPageViewCall extends AsyncTask&lt;String, Void, String&gt; {
+    private Exception exception;
+
+    protected String doInBackground(String... urls) {
+        try {
+            EventsApi eventsApi = new EventsApi();
+            eventsApi.addHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;Accept&quot;,&quot;application/json&quot;);
+            eventsApi.addHeader(&quot;apikey&quot;, &quot;API_KEY&quot;); // Set your own Api Key
+
+            eventsApi.setBasePath(&quot;http://api.octomatic.in&quot;); // Set Base Path
+            try {
+                ProductPageViewMessage message = new ProductPageViewMessage();
+                message.setUserId(1234567); // Set Your own User Id
+                message.setPhoneDetails(phoneDetails); // Phone Details Object
+
+                message.setRouteUrl(&quot;/Home/DealsOfTheDay/34&quot;); // Page URL
+
+                List&lt;String&gt; cat = new ArrayList&lt;String&gt;();
+                cat.add(&quot;handbags&quot;); // Multiple Page Category
+                cat.add(&quot;indian&quot;); // Multiple Page Category
+
+                message.setCategories(cat);
+
+                List&lt;String&gt; tags = new ArrayList&lt;String&gt;();
+                tags.add(&quot;handbags&quot;); // Multiple Page Tags
+                tags.add(&quot;indian&quot;); // Multiple Page Tags
+                message.setTags(tags);
+                message.setPrice(99.99f); // Set Product Price
+                message.setProductId(12345); // Set Product ID
+                message.setProductName(&quot;PRODUCT_NAME&quot;); // Set Product Name
+
+                BeaconResponse response = eventsApi.eventsProductpageViewPost(message);
+                return response.getEventId().toString();
+            } catch (Exception e) {
+                return e.toString();
+            }
+        } catch (Exception e) {
+            this.exception = e;
+            return null;
+        }
+    }
+
+    protected void onPostExecute(String response) {
+        Log.d(&quot;EventId&quot;,response);
+        responseText.setText(response);
+    }
+}
+
+</code></pre>
+
+<pre><code>- Set `Api Key`, `Base Path URL` shared with you.
+- Replace `User Id` with your own Users Id
+- Replace `Page Url`, `categories`, `tags` with the page details
+- Replace `Product ID`, `Product Name`, `Product Price` with product details
+- Replace phoneDeatils with your own PhoneDetails Class object created above.
+</code></pre>
+<ul>
+<li>Make Beacon Call when user logged out.</li>
+</ul>
+<pre><code>
+AppProductPageViewCall beaconCall = new AppProductPageViewCall();
+String[] param = new String[]{};
+beaconCall.execute(param);
+
+</code></pre>
+
+<h4 id="user_gcm_token_update_call"><a class="toclink" href="#user_gcm_token_update_call">User GCM Token Update Call</a><a class="headerlink" href="#user_gcm_token_update_call" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create an Async Task for GCM Token Update Beacon Call</li>
+</ul>
+<pre><code>
+class PushNotificationCall extends AsyncTask&lt;String, Void, String&gt; {
+    private Exception exception;
+
+    protected String doInBackground(String... data) {
+        try {
+
+            PushnotificationApi pushApi = new PushnotificationApi();
+            pushApi.addHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+            pushApi.addHeader(&quot;Accept&quot;,&quot;application/json&quot;);
+            pushApi.addHeader(&quot;apikey&quot;, &quot;API_KEY&quot;); // Set your own Api Key
+
+            pushApi.setBasePath(&quot;http://api.octomatic.in&quot;); // Set Base Path
+
+            try {
+                UpdatePushToken message = new UpdatePushToken();
+                message.setUserId(1234567); // Set Your own User Id
+                message.setPhoneDetails(phoneDetails); // Phone Details Object
+
+                message.setPushToken(GCMToken); // Replace with your Google GCM Registration Token
+                message.setPushKey(&quot;AbCdEfGhIjKl0123-4_56789mnop&quot;); // Replace with your Google GCM API Key
+
+                message.setNotificationType(1); // Android - 1
+
+                BeaconResponse response = pushApi.updatePushTokenPost(message);
+                return response.getEventId().toString();
+            } catch (Exception e) {
+                return e.toString();
+            }
+        } catch (Exception e) {
+            this.exception = e;
+            return null;
+        }
+    }
+
+    protected void onPostExecute(String response) {
+        Log.d(&quot;GCM Token Updated&quot;,response);
+    }
+}
+
+</code></pre>
+
+<pre><code>- Set `Api Key`, `Base Path URL` shared with you.
+- Replace `User Id` with your own Users Id
+- Replace `GCMToken`, `GCM API Key` with your Google GCM Registration Token &amp; your Google api key
+- Replace phoneDeatils with your own PhoneDetails Class object created above.
+</code></pre>
+<ul>
+<li>Make Beacon Call when GCM registered.</li>
+</ul>
+<p>```</p>
+<p>PushNotificationCall beaconcall = new PushNotificationCall();
+String[] param = new String[]{};
+beaconcall.execute(param);</p>
+<p>I```</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>&copy; 2016, <a href="http://www.octo.ai">Aurora Borealis</a><p /></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

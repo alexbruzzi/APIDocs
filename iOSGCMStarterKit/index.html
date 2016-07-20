@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Aurora Borealis Pvt. Ltd.">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>iOS, GCM - Octomatic Developers</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76541897-2', 'developers.octo.ai');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../index.html">Octomatic Developers</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../index.html">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../Arconcepts/index.html">Architecture</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Starter Kit <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../StarterKit/index.html">Starter Kit</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../iOSAPNSStarterKit/index.html">iOS, APNS</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="index.html">iOS, GCM</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../androidGCMStarterKit/index.html">android, native</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../cordovaOctoStarterKit/index.html">android, cordova</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../ApiDoc/index.html">API Doc</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../iOSAPNSStarterKit/index.html">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../androidGCMStarterKit/index.html">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#ios_gcm_starter_kit">iOS, GCM Starter Kit</a></li>
+        
+    
+        <li class="main "><a href="#get_started">Get Started</a></li>
+        
+            <li><a href="#github_clone">Github Clone</a></li>
+        
+            <li><a href="#setup_capabilities">Setup Capabilities</a></li>
+        
+            <li><a href="#setup_octomatic_enterprise_api">Setup Octomatic Enterprise API</a></li>
+        
+            <li><a href="#code_implementation">Code Implementation</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="ios_gcm_starter_kit"><a class="toclink" href="#ios_gcm_starter_kit">iOS, GCM Starter Kit</a><a class="headerlink" href="#ios_gcm_starter_kit" title="Permanent link">&para;</a></h1>
+<p>This kit covers an app published on iOS platform and uses GCM for push notifications.</p>
+<div class="toc">
+<ul>
+<li><a href="#ios_gcm_starter_kit">iOS, GCM Starter Kit</a></li>
+<li><a href="#get_started">Get Started</a><ul>
+<li><a href="#github_clone">Github Clone</a><ul>
+<li><a href="#libraries">Libraries</a></li>
+</ul>
+</li>
+<li><a href="#setup_capabilities">Setup Capabilities</a><ul>
+<li><a href="#geolocation">GeoLocation</a><ul>
+<li><a href="#provide_an_explanation_for_why_location_is_being_used">Provide an explanation for why location is being used</a></li>
+<li><a href="#link_to_corelocation_framework">Link to CoreLocation framework</a></li>
+</ul>
+</li>
+<li><a href="#push_notification">Push Notification</a><ul>
+<li><a href="#enable_push_notifications">Enable Push Notifications</a></li>
+<li><a href="#get_the_gcm_config_file">Get the GCM config file</a></li>
+<li><a href="#add_the_configuration_file_to_your_project">Add the configuration file to your project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#setup_octomatic_enterprise_api">Setup Octomatic Enterprise API</a><ul>
+<li><a href="#add_api_keys">Add API Keys</a></li>
+<li><a href="#update_the_api_endpoint_optional">Update the API Endpoint (Optional)</a></li>
+</ul>
+</li>
+<li><a href="#code_implementation">Code Implementation</a><ul>
+<li><a href="#initialising_octomatic_api_and_handling_callback">Initialising Octomatic API and handling callback</a></li>
+<li><a href="#registering_your_app_client_with_gcm">Registering your app client with GCM</a></li>
+<li><a href="#updating_users_registrationtoken_to_octomatic">Updating user's registrationToken to Octomatic</a></li>
+<li><a href="#updating_users_location">Updating user's location</a><ul>
+<li><a href="#objective_c">Objective C</a></li>
+<li><a href="#swift">Swift</a></li>
+</ul>
+</li>
+<li><a href="#sending_out_api_calls">Sending out API calls</a><ul>
+<li><a href="#appinit">app.init</a></li>
+<li><a href="#applogin">app.login</a></li>
+<li><a href="#applogout">app.logout</a></li>
+<li><a href="#pageview">page.view</a></li>
+<li><a href="#productpageview">productpage.view</a></li>
+</ul>
+</li>
+<li><a href="#registering_for_remote_notifications">Registering for remote notifications</a></li>
+<li><a href="#handling_remote_notifications">Handling remote notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="get_started"><a class="toclink" href="#get_started">Get Started</a><a class="headerlink" href="#get_started" title="Permanent link">&para;</a></h1>
+<h2 id="github_clone"><a class="toclink" href="#github_clone">Github Clone</a><a class="headerlink" href="#github_clone" title="Permanent link">&para;</a></h2>
+<p>The complete source code of this app is available at our Github. <a href="https://github.com/octoai/StarterKit-IOS-GCM">https://github.com/octoai/StarterKit-IOS-GCM</a>. You should clone this and keep it ready for reference.</p>
+<p>You can also <a href="https://github.com/octoai/StarterKit-IOS-GCM/archive/master.zip">download</a> the starter kit from here. This starter kit contains a working sample of code that takes all permissions from users, and sends appropriate API calls at appropriate times.</p>
+<p>If you already have an app, chances are most of the steps would have been already done. However, it is advised to go through the document and remove any inconsistencies.</p>
+<p>The code snippets mentioned here can be found in the starter kit. Should you have any difficulty understaning the flow, the starter kit code should help you out.</p>
+<h3 id="libraries"><a class="toclink" href="#libraries">Libraries</a><a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h3>
+<p>If you just want to download the libraries for Octomatic API, choose your language below:</p>
+<ul>
+<li><a href="../downloads/OctoAPI_ObjC.zip">Objective C API</a></li>
+<li><a href="../downloads/OctoAPI_swift.zip">Swift API</a></li>
+</ul>
+<h2 id="setup_capabilities"><a class="toclink" href="#setup_capabilities">Setup Capabilities</a><a class="headerlink" href="#setup_capabilities" title="Permanent link">&para;</a></h2>
+<h3 id="geolocation"><a class="toclink" href="#geolocation">GeoLocation</a><a class="headerlink" href="#geolocation" title="Permanent link">&para;</a></h3>
+<hr />
+<p>In order to be able to use geolocation while app is running in foreground, you need to do the following steps:</p>
+<h4 id="provide_an_explanation_for_why_location_is_being_used"><a class="toclink" href="#provide_an_explanation_for_why_location_is_being_used">Provide an explanation for why location is being used</a><a class="headerlink" href="#provide_an_explanation_for_why_location_is_being_used" title="Permanent link">&para;</a></h4>
+<p>Create a key named <code>NSLocationWhenInUseUsageDescription</code> in <code>Info.plist</code>. The string value of this key should be the description. By default, the description reads "<em>We use geolocation to provide better recommendations</em>". You may change to a suitable text, if necessary.</p>
+<pre><code>&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;
+&lt;string&gt;We use geolocation to provide better recommendations&lt;/string&gt;
+</code></pre>
+
+<h4 id="link_to_corelocation_framework"><a class="toclink" href="#link_to_corelocation_framework">Link to CoreLocation framework</a><a class="headerlink" href="#link_to_corelocation_framework" title="Permanent link">&para;</a></h4>
+<p>Go to <code>Build Phases &gt; Link Binary with Libraries</code>. Click on the <code>+</code> sign and select <code>CoreLocation.framework</code> from the list that comes.</p>
+<h3 id="push_notification"><a class="toclink" href="#push_notification">Push Notification</a><a class="headerlink" href="#push_notification" title="Permanent link">&para;</a></h3>
+<hr />
+<p>In order to enable push notification on your app, you need to do the following:</p>
+<h4 id="enable_push_notifications"><a class="toclink" href="#enable_push_notifications">Enable Push Notifications</a><a class="headerlink" href="#enable_push_notifications" title="Permanent link">&para;</a></h4>
+<p>Select your build target and go to <code>Capabilities</code> tab. Turn on <code>Push Notifications</code>.</p>
+<h4 id="get_the_gcm_config_file"><a class="toclink" href="#get_the_gcm_config_file">Get the GCM config file</a><a class="headerlink" href="#get_the_gcm_config_file" title="Permanent link">&para;</a></h4>
+<p>You would require a <code>GoogleServices-Info.plist</code> file for your project. In order to generate this file, you need to provide a valid APNs certificate and some additional information to get a configuration file and finish setting up your project. If you don't already have an APNs certificate, see <a href="https://developers.google.com/cloud-messaging/ios/certs#create_the_ssl_certificate">Provisioning APNs SSL Certificates</a>. When prompted, provide the Bundle ID associated with your APNs certificate.</p>
+<p><a href="https://developers.google.com/mobile/add?platform=ios&amp;cntapi=gcm&amp;cntapp=Default%20Demo%20App&amp;cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fios%2Fstart%3Fconfigured%3Dtrue&amp;cntlbl=Continue%20with%20Try%20Cloud%20Messaging">Get the configuration file for GCM</a>.</p>
+<p>After you complete the configuration process, take note of the API server key on the download page, you will need it later. Download the GoogleServices-Info.plist file to add to your project.</p>
+<h4 id="add_the_configuration_file_to_your_project"><a class="toclink" href="#add_the_configuration_file_to_your_project">Add the configuration file to your project</a><a class="headerlink" href="#add_the_configuration_file_to_your_project" title="Permanent link">&para;</a></h4>
+<p>Drag the <code>GoogleService-Info.plist</code> file you just downloaded into the root of your Xcode project and add it to all targets.
+In Xcode, replace the bundle identifier for the GcmExample and GcmExampleSwift targets with the value associated with your APNs certificate. This must be the same value used in the Get a configuration file step.</p>
+<p>For more detailed instructions, please follow the <a href="https://developers.google.com/cloud-messaging/ios/start">GCM iOS guide</a>.</p>
+<h2 id="setup_octomatic_enterprise_api"><a class="toclink" href="#setup_octomatic_enterprise_api">Setup Octomatic Enterprise API</a><a class="headerlink" href="#setup_octomatic_enterprise_api" title="Permanent link">&para;</a></h2>
+<p>The Octomatic Enterprise API contains following files</p>
+<ul>
+<li>Swift<ul>
+<li><code>OctoAPI.swift</code></li>
+</ul>
+</li>
+<li>Objective C<ul>
+<li><code>OctoAPI.h</code></li>
+<li><code>OctoAPI.m</code></li>
+</ul>
+</li>
+</ul>
+<p>Copy these files to your corresponding project's source directory.</p>
+<h3 id="add_api_keys"><a class="toclink" href="#add_api_keys">Add API Keys</a><a class="headerlink" href="#add_api_keys" title="Permanent link">&para;</a></h3>
+<p>Once copied, you would require to add appropriate API Key and server key at the right places.</p>
+<p><strong>Objective C</strong></p>
+<p>Open <code>OctoAPI.m</code> and you should see something like below. Update the <code>APIKEY</code> with your Octomatic's Enterprise API Key. You should also update <code>SERVER_API_KEY</code> with the GCM server api key.</p>
+<pre><code>
+/*
+ SET YOUR API KEY HERE
+ You must manually set the API Key here
+ */
+NSString *APIKEY = @&quot;&quot;;
+
+
+/*
+SET YOUR GCM SERVER API KEY HERE
+ You must set the GCM SERVER API KEY so that push notifications can happen
+ */
+NSString *SERVER_API_KEY = @&quot;&quot;;
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<p>Open <code>OctoAPI.swift</code> and update <code>APIKEY</code> with your Octomatic's Enterprise API Key. You should also update <code>SERVER_API_KEY</code> with the GCM server api key.</p>
+<pre><code>
+/*
+Update your API KEY here.
+*/
+var APIKEY = &quot;&quot;
+
+/*
+SET YOUR GCM SERVER API KEY HERE
+ You must set the GCM SERVER API KEY so that push notifications can happen
+ */
+var SERVER_API_KEY = &quot;&quot;
+
+</code></pre>
+
+<h3 id="update_the_api_endpoint_optional"><a class="toclink" href="#update_the_api_endpoint_optional">Update the API Endpoint (Optional)</a><a class="headerlink" href="#update_the_api_endpoint_optional" title="Permanent link">&para;</a></h3>
+<p>By default, the API Endpoint points to production environment. Optionally, you can change this to sandbox endpoint for development purposes. If you need to do so, do it where <code>BASEURL</code> is defined.</p>
+<p><strong>Objective C</strong></p>
+<pre><code>
+NSString *BASEURL = @&quot;http://192.168.0.109:8000&quot;;
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<pre><code>
+var BASEURL = &quot;http://192.168.0.109:8000&quot;
+
+</code></pre>
+
+<p>Modifying the API files any further should not be necessary. However, if you feel any need to do so, please contact us at api@octo.ai beforehand.</p>
+<h2 id="code_implementation"><a class="toclink" href="#code_implementation">Code Implementation</a><a class="headerlink" href="#code_implementation" title="Permanent link">&para;</a></h2>
+<p>The following section will detail about the actual code implementation and is divided into following parts</p>
+<ul>
+<li>Initialising Octomatic API and handling callback</li>
+<li>Registering Client app with GCM servers</li>
+<li>Updating user's registrationToken to Octomatic</li>
+<li>Updating user's location</li>
+<li>Sending out API calls</li>
+<li>Handling remote notifications</li>
+</ul>
+<h3 id="initialising_octomatic_api_and_handling_callback"><a class="toclink" href="#initialising_octomatic_api_and_handling_callback">Initialising Octomatic API and handling callback</a><a class="headerlink" href="#initialising_octomatic_api_and_handling_callback" title="Permanent link">&para;</a></h3>
+<p>In order to initialize Octomatic API import the API files, and initialize the client. The calls are made using <code>NSUrlSession</code> and are executed async. A callback can be associated with the request which gets executed with the response value. The response value is a string which contains the eventId of the API call. This eventId can always be used from the dashboard to trace an event.</p>
+<p>In the following example, an <code>app.init</code> call is made for a user with ID as 2. In the callback, the response is logged to console.</p>
+<p><strong>Objective C</strong></p>
+<pre><code>
+#import &quot;OctoAPI.h&quot;
+
+
+// somewhere in the code
+OctoAPI *api = [[OctoAPI alloc] init];
+
+NSInteger userId = 2;
+[api sendAppInitCall:userId
+        onCompletion: ^(NSString* response){
+            NSLog(@&quot;Got response from App.Init %@&quot;,
+            response);
+          }];
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<pre><code>
+let api = OctoAPI()
+let userId = 2
+
+api.sendAppInitCall(userId) { (result) -&gt; Void in
+    print(result)
+}
+
+</code></pre>
+
+<h3 id="registering_your_app_client_with_gcm"><a class="toclink" href="#registering_your_app_client_with_gcm">Registering your app client with GCM</a><a class="headerlink" href="#registering_your_app_client_with_gcm" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow the <a href="https://developers.google.com/instance-id/guides/ios-implementation#set_up_your_cocoapods_dependencies">GCM guide for iOS installation</a> for a detailed, step by step guide to register client with GCM and get user's registrationToken.</li>
+<li>For a detailed working implementation, please take a look at the corresponding <code>AppDelegate</code> file.</li>
+</ul>
+<h3 id="updating_users_registrationtoken_to_octomatic"><a class="toclink" href="#updating_users_registrationtoken_to_octomatic">Updating user's registrationToken to Octomatic</a><a class="headerlink" href="#updating_users_registrationtoken_to_octomatic" title="Permanent link">&para;</a></h3>
+<p>In the <code>registrationHandler</code> part of the GCM code, implement the <code>updatePushToken</code> call. Following are the code samples.</p>
+<p><strong>Objective C (AppDelegate.m)</strong></p>
+<pre><code>GCMConfig *gcmConfig = [GCMConfig defaultConfig];
+  gcmConfig.receiverDelegate = self;
+  [[GCMService sharedInstance] startWithConfig:gcmConfig];
+  // [END start_gcm_service]
+  __weak typeof(self) weakSelf = self;
+  // Handler for registration token request
+  _registrationHandler = ^(NSString *registrationToken, NSError *error){
+    if (registrationToken != nil) {
+      weakSelf.registrationToken = registrationToken;
+      NSLog(@&quot;Registration Token: %@&quot;, registrationToken);
+      [weakSelf subscribeToTopic];
+      NSDictionary *userInfo = @{@&quot;registrationToken&quot;:registrationToken};
+      [[NSNotificationCenter defaultCenter] postNotificationName:weakSelf.registrationKey
+                                                          object:nil
+                                                        userInfo:userInfo];
+        // update the token to Octo
+        OctoAPI *api = [[OctoAPI alloc] init];
+        [api updatePushToken:2 pushToken:registrationToken  onCompletion: ^(NSString* response){
+            NSLog(@&quot;Got response from Push Token %@&quot;, response);
+        }];
+
+    } else {
+      NSLog(@&quot;Registration to GCM failed with error: %@&quot;, error.localizedDescription);
+      NSDictionary *userInfo = @{@&quot;error&quot;:error.localizedDescription};
+      [[NSNotificationCenter defaultCenter] postNotificationName:weakSelf.registrationKey
+                                                          object:nil
+                                                        userInfo:userInfo];
+    }
+  };
+</code></pre>
+
+<p><strong>Swift (AppDelegate.swift)</strong></p>
+<pre><code>func registrationHandler(registrationToken: String!, error: NSError!) {
+if (registrationToken != nil) {
+
+
+    // Push TO Octo
+  let api = OctoAPI()
+    let userId = 4
+    api.sendPushToken(userId, pushToken: registrationToken) { (result) -&gt; Void in
+        print(&quot;Push Token Response&quot;, result)
+    }
+
+
+  self.registrationToken = registrationToken
+  print(&quot;Registration Token: \(registrationToken)&quot;)
+  self.subscribeToTopic()
+  let userInfo = [&quot;registrationToken&quot;: registrationToken]
+  NSNotificationCenter.defaultCenter().postNotificationName(
+    self.registrationKey, object: nil, userInfo: userInfo)
+} else {
+  print(&quot;Registration to GCM failed with error: \(error.localizedDescription)&quot;)
+  let userInfo = [&quot;error&quot;: error.localizedDescription]
+  NSNotificationCenter.defaultCenter().postNotificationName(
+    self.registrationKey, object: nil, userInfo: userInfo)
+}
+}
+</code></pre>
+
+<h3 id="updating_users_location"><a class="toclink" href="#updating_users_location">Updating user's location</a><a class="headerlink" href="#updating_users_location" title="Permanent link">&para;</a></h3>
+<h4 id="objective_c"><a class="toclink" href="#objective_c">Objective C</a><a class="headerlink" href="#objective_c" title="Permanent link">&para;</a></h4>
+<p>Include the CoreLocation framework in <code>AppDelegate.h</code> header file. Also add a property <code>locationManager</code> to AppDelegate interface</p>
+<pre><code>
+#import &lt;Google/CloudMessaging.h&gt;
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;CoreLocation/CoreLocation.h&gt;
+
+@interface AppDelegate : UIResponder &lt;UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate&gt;
+
+@property(nonatomic, strong) UIWindow *window;
+@property(nonatomic, readonly, strong) NSString *registrationKey;
+@property(nonatomic, readonly, strong) NSString *messageKey;
+@property(nonatomic, readonly, strong) NSString *gcmSenderID;
+@property(nonatomic, readonly, strong) NSDictionary *registrationOptions;
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
+
+@end
+
+</code></pre>
+
+<p>Requesting Geolocation from user should be done when the app finishes launching. Typically, this could be in <code>AppDelegate.m</code>'s <code>didFinishLaunchingWithOptions</code> function.</p>
+<pre><code>
+- (BOOL)application:(UIApplication *)application
+      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    // Get geolocation permissions from user
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@&quot;Disabled&quot;);
+        // location services is disabled, alert user
+        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@&quot;DisabledTitle&quot;, @&quot;DisabledTitle&quot;)
+                                                                        message:NSLocalizedString(@&quot;DisabledMessage&quot;, @&quot;DisabledMessage&quot;)
+                                                                       delegate:nil
+                                                              cancelButtonTitle:NSLocalizedString(@&quot;OKButtonTitle&quot;, @&quot;OKButtonTitle&quot;)
+                                                              otherButtonTitles:nil];
+        [servicesDisabledAlert show];
+    }
+    else
+    {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        [self.locationManager startUpdatingLocation];
+        NSLog(@&quot;Not Disabled&quot;);
+    }
+}
+
+</code></pre>
+
+<p>Once the permissions to get geolocation from user is available, then add a delegate method that would update the location to Octomatic's API. Not that this does not necessarily mean an API call. It just means that the next API call happening would include the updated location of the user.</p>
+<p>This should typically reside in <code>AppDelegate.m</code></p>
+<pre><code>
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [OctoAPI updateLocation:locations];
+}
+
+</code></pre>
+
+<h4 id="swift"><a class="toclink" href="#swift">Swift</a><a class="headerlink" href="#swift" title="Permanent link">&para;</a></h4>
+<p>Import the required framework in <code>ViewController.swift</code> and add it's delegate</p>
+<pre><code>
+import CoreLocation
+
+class ViewController: UIViewController, CLLocationManagerDelegate {
+
+    var locationManager: CLLocationManager!
+
+    // ...
+}
+
+</code></pre>
+
+<p>Ask for authorization when the view loads</p>
+<pre><code>
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    locationManager = CLLocationManager()
+    locationManager.delegate = self
+    locationManager.requestWhenInUseAuthorization()
+
+}
+
+</code></pre>
+
+<p>Update Octo API about new locations when they happen. This does not necessarily mean making an API call to Octomatic's endpoint. It only means that the next API call will happen with the new location that is available.</p>
+<pre><code>
+func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    OctoAPI.updateLocation(locations)
+}
+
+func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    print(&quot;didFailWithError: \(error.description)&quot;)
+
+}
+func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    if status == .AuthorizedWhenInUse {
+        locationManager.startUpdatingLocation()
+    }
+    if status == .AuthorizedAlways {
+        if CLLocationManager.isMonitoringAvailableForClass(CLBeaconRegion.self) {
+            if CLLocationManager.isRangingAvailable() {
+                // do stuff
+            }
+        }
+    }
+}
+
+</code></pre>
+
+<h3 id="sending_out_api_calls"><a class="toclink" href="#sending_out_api_calls">Sending out API calls</a><a class="headerlink" href="#sending_out_api_calls" title="Permanent link">&para;</a></h3>
+<h4 id="appinit"><a class="toclink" href="#appinit">app.init</a><a class="headerlink" href="#appinit" title="Permanent link">&para;</a></h4>
+<hr />
+<p>This call should be made everytime the app comes to foreground. Place the code inside <code>applicationDidBecomeActive</code> function in <code>appdelegate</code> file. There could be potentially more stuff inside it. Make sure to add it to the last of all the other things happening.</p>
+<p><strong>Objective C (AppDelegate.m)</strong></p>
+<pre><code>
+// [START connect_gcm_service]
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+
+    // Authenticate the user
+    NSInteger userId = 2;
+
+    // Send app.init call to Octomatic
+    OctoAPI *api = [[OctoAPI alloc] init];
+    [api sendAppInitCall:userId onCompletion: ^(NSString* response){
+        NSLog(@&quot;Got response from App.Init %@&quot;, response);
+    }];
+
+}
+
+</code></pre>
+
+<p><strong>Swift (AppDelegate.swift)</strong></p>
+<pre><code>
+func applicationDidBecomeActive( application: UIApplication) {
+
+    // authenticate the user
+    let userId = 2
+
+    // send App Init API Call to Octo
+    let api = OctoAPI()
+    api.sendAppInitCall(userId) { (result) -&gt; Void in
+        print(&quot;App.Init result&quot;, result)
+    }
+}
+
+</code></pre>
+
+<h4 id="applogin"><a class="toclink" href="#applogin">app.login</a><a class="headerlink" href="#applogin" title="Permanent link">&para;</a></h4>
+<hr />
+<p>This call should be made everytime an un-authenticated user authenticates themselves and logs into the system. Place this at your login callback function.</p>
+<p>In the starter kit, these calls are placed in <code>ViewController</code> files. They are triggered by corresponding button actions.</p>
+<p><strong>Objective C</strong></p>
+<pre><code>
+// user who just logged in
+NSInteger userId = 2;
+
+OctoAPI *api = [[OctoAPI alloc] init];
+[api sendAppLoginCall:userId  onCompletion: ^(NSString* response){
+    NSLog(@&quot;Got response from App.Login %@&quot;, response);
+
+    // Possibly store this response for tracing it
+}];
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<pre><code>
+// authenticate the user
+
+let userId = 2
+
+let api = OctoAPI()
+api.sendAppLoginCall(userId) { (result) -&gt; Void in
+    // do something with the response.
+    // possibly store it for tracing/debugging purposes
+    print(result)
+}
+
+</code></pre>
+
+<h4 id="applogout"><a class="toclink" href="#applogout">app.logout</a><a class="headerlink" href="#applogout" title="Permanent link">&para;</a></h4>
+<hr />
+<p>This call should be made everytime a user chooses to logout from the system. Place this call just before the logout action happens.</p>
+<p>In the starter kit, these calls are placed in <code>ViewController</code> files. They are triggered by corresponding button actions.</p>
+<p><strong>Objective C</strong></p>
+<pre><code>
+// user who is logging out
+NSInteger userId = 2;
+
+OctoAPI *api = [[OctoAPI alloc] init];
+[api sendAppLogoutCall:userId  onCompletion: ^(NSString* response){
+    NSLog(@&quot;Got response from App.Logout %@&quot;, response);
+
+    // Possibly store this response for tracing it
+}]
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<pre><code>
+let userId = 2
+
+let api = OctoAPI()
+api.sendAppLogoutCall(userId) { (result) -&gt; Void in
+    // do something with the response.
+    // possibly store it for tracing/debugging purposes
+    print(result)
+}
+
+</code></pre>
+
+<h4 id="pageview"><a class="toclink" href="#pageview">page.view</a><a class="headerlink" href="#pageview" title="Permanent link">&para;</a></h4>
+<hr />
+<p>This call should be send upon every page view call happening. A pageview is said to happen when a user is browsing any page that is <strong>not a product page</strong>. Product pages are handled separately by a <code>productpage.view</code> call.</p>
+<p>In the starter kit, these calls are placed in <code>ViewController</code> files. They are triggered by corresponding button actions.</p>
+<p><strong>Objective C</strong></p>
+<pre><code>
+// authenticated user who is viewing the page
+NSInteger userId = 2;
+
+// Symbolic URL (or other unique identifier)
+// for the page being viewed
+NSString *routeUrl = @&quot;Home#Index&quot;;
+
+// Categories this page belongs to
+NSArray *categories = @[@&quot;Aldo&quot;, @&quot;Women&quot;];
+
+// Tags that belong to the page
+NSArray *tags = @[@&quot;Red&quot;, @&quot;Handbag&quot;, @&quot;Leather&quot;];
+
+OctoAPI *api = [[OctoAPI alloc] init];
+[api sendPageViewCall:userId
+                routeUrl:routeUrl
+           categories:categories
+                 tags:tags
+         onCompletion: ^(NSString* response){
+             NSLog(@&quot;Got response from Page.View %@&quot;, response);
+     }];
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<pre><code>
+// Symbolic URL (or other unique identifier)
+// for the page being viewed
+let routeUrl = &quot;/Home&quot;
+
+// Categories this page belongs to
+let categories = [&quot;something&quot;, &quot;something else&quot;]
+
+// Tags that belong to the page
+let tags = [&quot;cat1&quot;, &quot;cat2&quot;]
+
+// authenticated user who is viewing the page
+let userId = 2
+
+let api = OctoAPI() 
+api.sendPageViewCall(userId, routeUrl: routeUrl,
+    categories: categories, tags: tags) { (result) -&gt; Void in
+        self.showAPIResult(result)
+}
+
+</code></pre>
+
+<h4 id="productpageview"><a class="toclink" href="#productpageview">productpage.view</a><a class="headerlink" href="#productpageview" title="Permanent link">&para;</a></h4>
+<hr />
+<p>This call should be sent on every product pageview. This call differs from the <code>page.view</code> call.</p>
+<p>In the starter kit, these calls are placed in <code>ViewController</code> files. They are triggered by corresponding button actions.</p>
+<p><strong>Objective C</strong></p>
+<pre><code>
+// authenticated user who is viewing the page
+NSInteger userId = 2;
+
+// Symbolic URL (or other unique identifier)
+// for the page being viewed
+NSString *routeUrl = @&quot;Home#Index&quot;;
+
+// id of the product
+NSInteger pid = 8263243
+
+// name of the product
+NSString* name = @&quot;SmartPhone Series S10&quot;;
+
+// price of the product
+double price = 899.99;
+
+// Categories this page belongs to
+NSArray *categories = @[@&quot;Aldo&quot;, @&quot;Women&quot;];
+
+// Tags that belong to the page
+NSArray *tags = @[@&quot;Red&quot;, @&quot;Handbag&quot;, @&quot;Leather&quot;];
+
+OctoAPI *api = [[OctoAPI alloc] init];
+    [api sendProductPageViewCall:userId
+                        routeUrl:routeUrl
+                       productId:pid
+                     productName:name
+                           price:price
+                      categories:categories
+                            tags:tags
+                    onCompletion: ^(NSString* response){
+                        NSLog(@&quot;Got response from Productpage.view %@&quot;,
+                        response);
+                    }
+     ];
+
+</code></pre>
+
+<p><strong>Swift</strong></p>
+<pre><code>
+// authenticated user who is viewing this product
+let userId = 4
+
+// Symbolic URL (or other unique identifier)
+// for the page being viewed
+let routeUrl = &quot;/Home/Phone&quot;
+
+// name of the product being viewed
+let productName = &quot;Smartphone Series S02&quot;
+
+// price of the product
+let price = 999.00
+
+// ID of the product
+let productId = 635373
+
+// categories this product belongs to
+let categories = [&quot;electronics&quot;, &quot;phones&quot;]
+
+// tags that belong to this product
+let tags = [&quot;selfie&quot;, &quot;cheap&quot;]
+
+let api = OctoAPI() 
+api.sendProductPageViewCall(userId, routeUrl: routeUrl,
+    productId: productId, price: price, productName: productName,
+    categories: categories, tags: tags) { (result) -&gt; Void in
+        print(result)
+}
+
+</code></pre>
+
+<h3 id="registering_for_remote_notifications"><a class="toclink" href="#registering_for_remote_notifications">Registering for remote notifications</a><a class="headerlink" href="#registering_for_remote_notifications" title="Permanent link">&para;</a></h3>
+<p><strong>Objective C (AppDelegate.m)</strong></p>
+<p>Put the following inside <code>didFinishLaunchingWithOptions</code> so as to ask permissions about push notifications.</p>
+<pre><code>  NSError* configureError;
+  [[GGLContext sharedInstance] configureWithError:&amp;configureError];
+  NSAssert(!configureError, @&quot;Error configuring Google services: %@&quot;, configureError);
+  _gcmSenderID = [[[GGLContext sharedInstance] configuration] gcmSenderID];
+  // Register for remote notifications
+  if (floor(NSFoundationVersionNumber) &lt;= NSFoundationVersionNumber_iOS_7_1) {
+    // iOS 7.1 or earlier
+    UIRemoteNotificationType allNotificationTypes =
+        (UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge);
+    [application registerForRemoteNotificationTypes:allNotificationTypes];
+  } else {
+    // iOS 8 or later
+    // [END_EXCLUDE]
+    UIUserNotificationType allNotificationTypes =
+        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+    UIUserNotificationSettings *settings =
+        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+  }
+</code></pre>
+
+<p>The following functions check the status of push notifications permissions and appropriately handle the situation. If it is a success asking for permissions, GCM updates the registrationToken for user. In case of error, just a message is displayed.</p>
+<pre><code>- (void)application:(UIApplication *)application
+    didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+// [END receive_apns_token]
+  // [START get_gcm_reg_token]
+  // Create a config and set a delegate that implements the GGLInstaceIDDelegate protocol.
+  GGLInstanceIDConfig *instanceIDConfig = [GGLInstanceIDConfig defaultConfig];
+  instanceIDConfig.delegate = self;
+  // Start the GGLInstanceID shared instance with the that config and request a registration
+  // token to enable reception of notifications
+  [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
+  _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
+                           kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
+  [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                      scope:kGGLInstanceIDScopeGCM
+                                                    options:_registrationOptions
+                                                    handler:_registrationHandler];
+  // [END get_gcm_reg_token]
+}
+
+// [START receive_apns_token_error]
+- (void)application:(UIApplication *)application
+    didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+  NSLog(@&quot;Registration for remote notification failed with error: %@&quot;, error.localizedDescription);
+// [END receive_apns_token_error]
+  NSDictionary *userInfo = @{@&quot;error&quot; :error.localizedDescription};
+  [[NSNotificationCenter defaultCenter] postNotificationName:_registrationKey
+                                                      object:nil
+                                                    userInfo:userInfo];
+}
+</code></pre>
+
+<p><strong>Swift (AppDelegate.swift)</strong></p>
+<pre><code>  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+      [NSObject: AnyObject]?) -&gt; Bool {
+    // [START_EXCLUDE]
+    // Configure the Google context: parses the GoogleService-Info.plist, and initializes
+    // the services that have entries in the file
+    var configureError:NSError?
+    GGLContext.sharedInstance().configureWithError(&amp;configureError)
+    assert(configureError == nil, &quot;Error configuring Google services: \(configureError)&quot;)
+    gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
+    // [END_EXCLUDE]
+    // Register for remote notifications
+    if #available(iOS 8.0, *) {
+      let settings: UIUserNotificationSettings =
+          UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+      application.registerUserNotificationSettings(settings)
+      application.registerForRemoteNotifications()
+    } else {
+      // Fallback
+      let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
+      application.registerForRemoteNotificationTypes(types)
+    }
+
+  // [END register_for_remote_notifications]
+  // [START start_gcm_service]
+    let gcmConfig = GCMConfig.defaultConfig()
+    gcmConfig.receiverDelegate = self
+    GCMService.sharedInstance().startWithConfig(gcmConfig)
+  // [END start_gcm_service]
+    return true
+  }
+</code></pre>
+
+<p>Similarly, check the status of permissions and update the GCM or handle the error accordingly.</p>
+<pre><code>  func application( application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken
+      deviceToken: NSData ) {
+  // [END receive_apns_token]
+        // [START get_gcm_reg_token]
+        // Create a config and set a delegate that implements the GGLInstaceIDDelegate protocol.
+        let instanceIDConfig = GGLInstanceIDConfig.defaultConfig()
+        instanceIDConfig.delegate = self
+        // Start the GGLInstanceID shared instance with that config and request a registration
+        // token to enable reception of notifications
+        GGLInstanceID.sharedInstance().startWithConfig(instanceIDConfig)
+        registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
+          kGGLInstanceIDAPNSServerTypeSandboxOption:true]
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
+          scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+        // [END get_gcm_reg_token]
+  }
+
+  // [START receive_apns_token_error]
+  func application( application: UIApplication, didFailToRegisterForRemoteNotificationsWithError
+      error: NSError ) {
+    print(&quot;Registration for remote notification failed with error: \(error.localizedDescription)&quot;)
+  // [END receive_apns_token_error]
+    let userInfo = [&quot;error&quot;: error.localizedDescription]
+    NSNotificationCenter.defaultCenter().postNotificationName(
+        registrationKey, object: nil, userInfo: userInfo)
+  }
+</code></pre>
+
+<h3 id="handling_remote_notifications"><a class="toclink" href="#handling_remote_notifications">Handling remote notifications</a><a class="headerlink" href="#handling_remote_notifications" title="Permanent link">&para;</a></h3>
+<p>In order to inform the user about an incoming remote notification, the appropriate <code>didReceiveRemoteNotification</code> call needs to be worked upon. Here is how you can do it:</p>
+<p><strong>Objective C (AppDelegate.m)</strong></p>
+<pre><code>- (void)application:(UIApplication *)application
+    didReceiveRemoteNotification:(NSDictionary *)userInfo {
+  // This works only if the app started the GCM service
+  [[GCMService sharedInstance] appDidReceiveMessage:userInfo];
+  // Handle the received message
+  // [START_EXCLUDE]
+  [[NSNotificationCenter defaultCenter] postNotificationName:_messageKey
+                                                      object:nil
+                                                    userInfo:userInfo];
+  // [END_EXCLUDE]
+}
+
+- (void)application:(UIApplication *)application
+    didReceiveRemoteNotification:(NSDictionary *)userInfo
+    fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
+  // This works only if the app started the GCM service
+  [[GCMService sharedInstance] appDidReceiveMessage:userInfo];
+  // Handle the received message
+  // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
+  // [START_EXCLUDE]
+  [[NSNotificationCenter defaultCenter] postNotificationName:_messageKey
+                                                      object:nil
+                                                    userInfo:userInfo];
+  handler(UIBackgroundFetchResultNewData);
+  // [END_EXCLUDE]
+    NSLog(@&quot;Done with notification stuff.&quot;);
+}
+</code></pre>
+
+<p><strong>Swift (AppDelegate.swift)</strong></p>
+<pre><code>  func application( application: UIApplication,
+    didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+      print(&quot;Notification received: \(userInfo)&quot;)
+      // This works only if the app started the GCM service
+      GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+      // Handle the received message
+      // [START_EXCLUDE]
+      NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
+          userInfo: userInfo)
+      // [END_EXCLUDE]
+  }
+
+  func application( application: UIApplication,
+    didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
+    fetchCompletionHandler handler: (UIBackgroundFetchResult) -&gt; Void) {
+      print(&quot;Notification received: \(userInfo)&quot;)
+      // This works only if the app started the GCM service
+      GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+
+      // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
+      // [START_EXCLUDE]
+      NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
+        userInfo: userInfo)
+      handler(UIBackgroundFetchResult.NoData);
+      // [END_EXCLUDE]
+  }
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>&copy; 2016, <a href="http://www.octo.ai">Aurora Borealis</a><p /></center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
